@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "549014778793",
+    "project_id": "gdsc-cv-938a5",
+    "storage_bucket": "gdsc-cv-938a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549014778793:android:5977abf98e650472818ab8",
+        "android_client_info": {
+          "package_name": "com.example.recycle_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549014778793-n1l1nq6o77ide3s2i4vtuncg0vv75tl9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz9ZSi0bObkepvqAYuZCzpfP7LN4QVXS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549014778793-n1l1nq6o77ide3s2i4vtuncg0vv75tl9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "549014778793-t2s6sl929ne8n4jf7fddi05iestqo13l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.recycleApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
