@@ -4,11 +4,14 @@ import 'package:provider/provider.dart';
 import 'package:recycle_app/models/myuser.dart';
 import 'package:recycle_app/screen/wrapper.dart';
 import 'package:recycle_app/service/auth.dart';
+import 'firebase_options.dart';
 //import 'package:provider/provider.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
   runApp(const MyApp());
 }
 

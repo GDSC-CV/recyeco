@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:recycle_app/screen/loading.dart';
+import 'package:recycle_app/tools/constants.dart';
 import 'package:recycle_app/service/auth.dart';
 
 class SignIn extends StatefulWidget {
@@ -17,13 +19,15 @@ class _SignInState extends State<SignIn> {
 
   final AuthService _auth = AuthService();
   final _formkey = GlobalKey<FormState>();
+  bool loading = false;
+
   String email = '';
   String password = '';
   String error = '';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading?Loading() : Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[600],
       appBar: AppBar(
@@ -56,6 +60,7 @@ class _SignInState extends State<SignIn> {
             children: [
               SizedBox(height: 20,),
               TextFormField(
+                decoration: inputTextDecoration.copyWith(hintText: 'Email'),
                 validator: (value) => value!.isEmpty ? 'Enter an email':null,
                 onChanged: ((value) {
                   email = value;
@@ -63,6 +68,7 @@ class _SignInState extends State<SignIn> {
               ),
               SizedBox(height: 20,),
               TextFormField(
+                decoration: inputTextDecoration.copyWith(hintText: 'Password'),
                 validator: (value) => value!.length<6 ? 'Enter more than 6 chars':null,
                 obscureText: true,
                 onChanged: ((value) {
@@ -73,12 +79,15 @@ class _SignInState extends State<SignIn> {
               ElevatedButton(
                 onPressed: () async{
                   if(_formkey.currentState!.validate()){
+                    setState(() {
+                      loading = true;
+                    });
                     dynamic result = await _auth.signInwithEmailandPassword(email, password);
                     if(result==null){
                       setState(() {
                         error = 'could not sign in';
+                        loading = false;
                       });
-                      
                     }
                   }
                 },
@@ -101,10 +110,13 @@ class _SignInState extends State<SignIn> {
               SizedBox(height: 60,),
               ElevatedButton(
                 onPressed: () async{
-                  
+                    setState(() {
+                      loading = true;
+                    });
                     dynamic result = await _auth.signInAnon();
                     if(result==null){
                       setState(() {
+                        loading = false;
                         error = 'could not sign in';
                       });
                       
