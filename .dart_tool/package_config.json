@@ -188,6 +188,36 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "google_sign_in",
+      "rootUri": "file:///C:/Users/ZseRg/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in-5.4.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "google_sign_in_android",
+      "rootUri": "file:///C:/Users/ZseRg/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_android-6.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "google_sign_in_ios",
+      "rootUri": "file:///C:/Users/ZseRg/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_ios-5.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "google_sign_in_platform_interface",
+      "rootUri": "file:///C:/Users/ZseRg/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_platform_interface-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_sign_in_web",
+      "rootUri": "file:///C:/Users/ZseRg/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in_web-0.10.2+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "http_parser",
       "rootUri": "file:///C:/Users/ZseRg/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
@@ -386,7 +416,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-02-06T12:24:25.294964Z",
+  "generated": "2023-02-07T17:33:51.509921Z",
   "generator": "pub",
   "generatorVersion": "2.19.0"
 }

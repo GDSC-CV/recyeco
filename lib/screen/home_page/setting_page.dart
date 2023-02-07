@@ -73,7 +73,7 @@ class _Setting_pageState extends State<Setting_page> {
               onPressed: () async {
                 if(_formKey.currentState!.validate()){
                   await DatabaseService(uid: userId).updateUserData(
-                    _currentName ?? userData.name,
+                    _currentName,
                     userData.level
                   );
                   Navigator.pop(context);

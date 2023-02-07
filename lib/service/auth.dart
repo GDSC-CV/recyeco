@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:recycle_app/models/myuser.dart';
 import 'package:recycle_app/service/database.dart';
 
@@ -6,7 +7,7 @@ import 'package:recycle_app/service/database.dart';
 class AuthService{
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  
+
   MyUser? _myuserFromFirebaseUser(User? user){
     return user!=null ? MyUser(uid: user.uid,is_anonymous: user.isAnonymous):null;
   }
@@ -37,6 +38,30 @@ class AuthService{
       //print(e.toString());
       return null;
     }
+  }
+
+  Future signInWithGoogle()async{
+    try{
+      final GoogleSignInAccount? googleUser = await GoogleSignIn(
+        scopes: <String>["email"]
+      ).signIn();
+      
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser!.authentication;
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      UserCredential result = await _auth.signInWithCredential(credential);
+      User? user = result.user;
+      //print(user);
+      await DatabaseService(uid: user!.uid).updateUserData(user.displayName!,1);
+      return _myuserFromFirebaseUser(user);
+    }catch(e){
+      //print(e.toString());
+      return null;
+    }
+    
   }
 
   Future signInwithEmailandPassword(String email,String password) async{

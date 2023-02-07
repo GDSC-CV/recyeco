@@ -240,6 +240,46 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  google_sign_in:
+    dependency: "direct main"
+    description:
+      name: google_sign_in
+      sha256: "821f354c053d51a2d417b02d42532a19a6ea8057d2f9ebb8863c07d81c98aaf9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.4.4"
+  google_sign_in_android:
+    dependency: transitive
+    description:
+      name: google_sign_in_android
+      sha256: "197228076289e506d281328c6846b5986d929d316fc1d2c92a88bb13784faccc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.5"
+  google_sign_in_ios:
+    dependency: transitive
+    description:
+      name: google_sign_in_ios
+      sha256: "1116aff5e87f89837b052a81abe6259be7c4dd418275786864d27b74cb2a4e70"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.5.1"
+  google_sign_in_platform_interface:
+    dependency: transitive
+    description:
+      name: google_sign_in_platform_interface
+      sha256: "61306213c76bb8170c3aa20017df296c0131c24d7f6c0cc7e2eeaeac34c9f457"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.0"
+  google_sign_in_web:
+    dependency: transitive
+    description:
+      name: google_sign_in_web
+      sha256: "75cc41ebc53b1756320ee14d9c3018ad3e6cea298147dbcd86e9d0c8d6720b40"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.10.2+1"
   http_parser:
     dependency: transitive
     description:

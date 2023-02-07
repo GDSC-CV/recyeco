@@ -15,15 +15,15 @@
 15    <uses-permission android:name="android.permission.INTERNET" />
 15-->D:\flutter_project\recycle_app\android\app\src\debug\AndroidManifest.xml:7:5-66
 15-->D:\flutter_project\recycle_app\android\app\src\debug\AndroidManifest.xml:7:22-64
-16    <uses-permission android:name="android.permission.CAMERA" />
-16-->[:camera_android] D:\flutter_project\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-65
-16-->[:camera_android] D:\flutter_project\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-62
-17    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-17-->[:camera_android] D:\flutter_project\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-71
-17-->[:camera_android] D:\flutter_project\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-68
-18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-18-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:24:5-79
-18-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:24:22-76
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->D:\flutter_project\recycle_app\android\app\src\main\AndroidManifest.xml:3:5-79
+16-->D:\flutter_project\recycle_app\android\app\src\main\AndroidManifest.xml:3:22-76
+17    <uses-permission android:name="android.permission.CAMERA" />
+17-->[:camera_android] D:\flutter_project\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-65
+17-->[:camera_android] D:\flutter_project\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-62
+18    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+18-->[:camera_android] D:\flutter_project\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-71
+18-->[:camera_android] D:\flutter_project\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-68
 19
 20    <application
 21        android:name="android.app.Application"
@@ -203,20 +203,45 @@
 129-->[com.google.firebase:firebase-common:20.2.0] C:\Users\ZseRg\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:30:13-36
 130
 131        <activity
-131-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ZseRg\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-132            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-132-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ZseRg\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-133            android:exported="false"
-133-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ZseRg\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-134            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-134-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ZseRg\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-135
-136        <meta-data
-136-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-137            android:name="com.google.android.gms.version"
-137-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-138            android:value="@integer/google_play_services_version" />
-138-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
-139    </application>
-140
-141</manifest>
+131-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:23:9-27:75
+132            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+132-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:24:13-93
+133            android:excludeFromRecents="true"
+133-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:25:13-46
+134            android:exported="false"
+134-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:26:13-37
+135            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+135-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:27:13-72
+136        <!--
+137            Service handling Google Sign-In user revocation. For apps that do not integrate with
+138            Google Sign-In, this service will never be started.
+139        -->
+140        <service
+140-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:33:9-37:51
+141            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+141-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:34:13-89
+142            android:exported="true"
+142-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:35:13-36
+143            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+143-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:36:13-107
+144            android:visibleToInstantApps="true" />
+144-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:37:13-48
+145
+146        <activity
+146-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ZseRg\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+147            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+147-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ZseRg\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+148            android:exported="false"
+148-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ZseRg\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+149            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+149-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\ZseRg\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+150
+151        <meta-data
+151-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+152            android:name="com.google.android.gms.version"
+152-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+153            android:value="@integer/google_play_services_version" />
+153-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+154    </application>
+155
+156</manifest>

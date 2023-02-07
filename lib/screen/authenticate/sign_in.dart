@@ -113,6 +113,30 @@ class _SignInState extends State<SignIn> {
                     setState(() {
                       loading = true;
                     });
+                    dynamic result = await _auth.signInWithGoogle();
+                    if(result==null){
+                      setState(() {
+                        loading = false;
+                        error = 'could not sign in';
+                      });
+                      
+                    }
+                  
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                  foregroundColor: Colors.grey[50],
+                ),
+                child: Text(
+                  'Google'
+                ),
+              ),
+              SizedBox(height: 60,),
+              ElevatedButton(
+                onPressed: () async{
+                    setState(() {
+                      loading = true;
+                    });
                     dynamic result = await _auth.signInAnon();
                     if(result==null){
                       setState(() {
