@@ -20,6 +20,7 @@ class AuthService{
       UserCredential result = await _auth.signInAnonymously();
       User? user = result.user;
       //print(user);
+      await DatabaseService(uid: user!.uid).updateUserData('Bob',1);
       return _myuserFromFirebaseUser(user);
     }catch(e){
       //print(e.toString());
