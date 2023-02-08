@@ -124,7 +124,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="copy_toast_msg">Link copied to clipboard</string>
-    <string name="default_web_client_id" translatable="false">549014778793-n1l1nq6o77ide3s2i4vtuncg0vv75tl9.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">549014778793-9k4n5m0oqmuvndbqkghk0ac7ndq8a688.apps.googleusercontent.com</string>
     <string name="fallback_menu_item_copy_link">Copy link</string>
     <string name="fallback_menu_item_open_in_browser">Open in browser</string>
     <string name="fallback_menu_item_share_link">Share link</string>
