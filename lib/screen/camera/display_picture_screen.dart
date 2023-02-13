@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
+
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
 

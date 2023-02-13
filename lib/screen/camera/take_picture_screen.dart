@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:recycle_app/screen/camera/display_picture_screen.dart';
+import 'package:recycle_app/service/classifier.dart';
+
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
     super.key,
@@ -14,8 +16,13 @@ class TakePictureScreen extends StatefulWidget {
 }
 
 class TakePictureScreenState extends State<TakePictureScreen> {
+  //for camera
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
+
+  //for classifier
+  late ClassifierService _classifier;
+  late Future _initializeClassifierFuture;
 
   @override
   void initState() {
@@ -31,6 +38,9 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 
     // Next, initialize the controller. This returns a Future.
     _initializeControllerFuture = _controller.initialize();
+
+    _classifier = ClassifierService();
+    _initializeClassifierFuture = _classifier.initialize();
   }
 
   @override
@@ -67,6 +77,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
           try {
             // Ensure that the camera is initialized.
             await _initializeControllerFuture;
+            await _initializeClassifierFuture;
 
             // Attempt to take a picture and get the file `image`
             // where it was saved.

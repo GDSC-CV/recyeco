@@ -6,7 +6,7 @@ import 'package:recycle_app/screen/camera/take_picture_screen.dart';
 import 'package:recycle_app/screen/home_page/setting_page.dart';
 import 'package:recycle_app/screen/home_page/userinfo_widget.dart';
 import 'package:recycle_app/service/auth.dart';
-import 'package:recycle_app/service/database.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
@@ -16,9 +16,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   AuthService _auth = AuthService();
-  
+
   void pushToCamera(BuildContext context) async {
     final cameras = await availableCameras();
     // ignore: use_build_context_synchronously
@@ -32,7 +31,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     UserData userData = Provider.of<UserData>(context);
 
     return Scaffold(
@@ -74,25 +72,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               child: ElevatedButton(
-                onPressed: () async{
+                onPressed: () async {
                   await _auth.signOut();
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.grey[50],
                 ),
-                child: const Text(
-                  'log out'
-                ),
+                child: const Text('log out'),
               ),
             ),
           ],
         ),
       ),
-    );  
+    );
   }
 }

@@ -7,11 +7,9 @@ import 'package:recycle_app/service/auth.dart';
 import 'firebase_options.dart';
 //import 'package:provider/provider.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -38,4 +36,3 @@ class MyApp extends StatelessWidget {
     );*/
   }
 }
-
