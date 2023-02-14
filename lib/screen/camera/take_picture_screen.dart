@@ -1,3 +1,7 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
+import 'package:image/image.dart' as img;
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:recycle_app/screen/camera/display_picture_screen.dart';
@@ -82,6 +86,11 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             // Attempt to take a picture and get the file `image`
             // where it was saved.
             final image = await _controller.takePicture();
+            Image imageWidget = Image.file(File(image.path));
+
+            var imageBytes = await image.readAsBytes();
+            img.Image imageInput = img.decodeImage(imageBytes)!;
+            var pred = _classifier.predict(imageInput);
 
             if (!mounted) return;
 
@@ -92,6 +101,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                   // Pass the automatically generated path to
                   // the DisplayPictureScreen widget.
                   imagePath: image.path,
+                  category: pred.label,
                 ),
               ),
             );

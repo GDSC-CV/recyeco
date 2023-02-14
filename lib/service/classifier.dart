@@ -9,6 +9,8 @@ import 'package:tflite_flutter/tflite_flutter.dart';
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 
 class ClassifierService {
+  late File localModelFile;
+
   late Interpreter interpreter;
   late InterpreterOptions _interpreterOptions;
 
@@ -32,8 +34,8 @@ class ClassifierService {
   late List<String> labels;
   late String modelName;
 
-  late NormalizeOp preProcessNormalizeOp;
-  late NormalizeOp postProcessNormalizeOp;
+  final NormalizeOp preProcessNormalizeOp = NormalizeOp(0, 1);
+  final NormalizeOp postProcessNormalizeOp = NormalizeOp(0, 255);
 
   ClassifierService({int? numThreads}) {
     _interpreterOptions = InterpreterOptions();
@@ -44,27 +46,32 @@ class ClassifierService {
   }
 
   Future initialize() async {
+    await _getModel();
     await _loadModel();
+    await loadLabels();
+  }
+
+  Future<void> _getModel() async {
+    await FirebaseModelDownloader.instance
+        .getModel(
+            "model",
+            FirebaseModelDownloadType.localModel,
+            FirebaseModelDownloadConditions(
+              iosAllowsCellularAccess: true,
+              iosAllowsBackgroundDownloading: false,
+              androidChargingRequired: false,
+              androidWifiRequired: false,
+              androidDeviceIdleRequired: false,
+            ))
+        .then((customModel) {
+      localModelFile = customModel.file;
+    });
   }
 
   Future _loadModel() async {
     try {
-      FirebaseModelDownloader.instance
-          .getModel(
-              "model",
-              FirebaseModelDownloadType.localModel,
-              FirebaseModelDownloadConditions(
-                iosAllowsCellularAccess: true,
-                iosAllowsBackgroundDownloading: false,
-                androidChargingRequired: false,
-                androidWifiRequired: false,
-                androidDeviceIdleRequired: false,
-              ))
-          .then((customModel) async {
-//        interpreter = await Interpreter.fromFile(customModel.file);
-        interpreter = await Interpreter.fromFile(customModel.file,
-            options: _interpreterOptions);
-      });
+      interpreter =
+          Interpreter.fromFile(localModelFile, options: _interpreterOptions);
       print('Interpreter Created Successfully');
 
       _inputShape = interpreter.getInputTensor(0).shape;
