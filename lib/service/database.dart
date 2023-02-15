@@ -9,11 +9,12 @@ class DatabaseService{
 
   final CollectionReference userCollection = FirebaseFirestore.instance.collection('users');
 
-  Future updateUserData(String name,int level) async{
+  Future updateUserData(String name,int level,int experiences) async{
     //print("test");
     return await userCollection.doc(uid).set({
         'name':name,
         'level':level,
+        'experiences': experiences,
       }
     );
   }
@@ -23,22 +24,7 @@ class DatabaseService{
       uid: uid ?? "",
       name: snapshot['name']?? "",
       level: snapshot['level']?? "",
-    );
-  }
-
-
-  List<UserProperty> _userPropertylistfromSnapshots(QuerySnapshot snapshot){
-    return snapshot.docs.map((doc){
-      return UserProperty(
-        name: doc.get('name') ?? "",
-        level: doc.get('level') ?? "",
-      );
-    }).toList();
-  }
-
-  Stream<List<UserProperty>?> get users{
-    return userCollection.snapshots().map(
-      _userPropertylistfromSnapshots
+      experiences: snapshot['experiences']?? "",
     );
   }
 

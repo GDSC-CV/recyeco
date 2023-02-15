@@ -17,7 +17,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  AuthService _auth = AuthService();
+  final AuthService _auth = AuthService();
   
   void pushToCamera(BuildContext context) async {
     final cameras = await availableCameras();
@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     UserData userData = Provider.of<UserData>(context);
-
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -42,10 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
+          children: <Widget>[
+            const Text(
               'Take a photo',
             ),
+            ElevatedButton(
+              onPressed: ()async{
+                await DatabaseService(uid: userData.uid).updateUserData(userData.name, userData.level, userData.experiences+13);
+              },
+              child: const Text("gain level"))
           ],
         ),
       ),
@@ -68,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(
                     builder: (BuildContext context) => Provider(
                       create: (context) => userData,
-                      builder: (context, child) => Setting_page(),
+                      builder: (context, child) => const Setting_page(),
                     ),
                   ),
                 );

@@ -30,9 +30,10 @@ class _Setting_pageState extends State<Setting_page> {
     
     //User user = Provider.of<User>(context);
     UserData userData = Provider.of<UserData>(context);
+    
     getCurrentUserInfo();
     return Scaffold(
-      backgroundColor: Colors.lightBlue[100],
+      backgroundColor: Colors.grey[300],
       body: Form(
         key: _formKey,
         child: Column(
@@ -72,10 +73,14 @@ class _Setting_pageState extends State<Setting_page> {
               ),
               onPressed: () async {
                 if(_formKey.currentState!.validate()){
-                  await DatabaseService(uid: userId).updateUserData(
-                    _currentName,
-                    userData.level
-                  );
+                  if(_currentName.isNotEmpty){
+                    await DatabaseService(uid: userId).updateUserData(
+                      _currentName,
+                      userData.level,
+                      userData.experiences,
+                    );
+                  }
+                  
                   Navigator.pop(context);
                 }
               }

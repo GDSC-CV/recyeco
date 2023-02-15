@@ -152,7 +152,7 @@ class _SignInState extends State<SignIn> {
                   foregroundColor: Colors.grey[50],
                 ),
                 child: Text(
-                  'Anonymouse'
+                  'Anonymous'
                 ),
               ),
             ],
