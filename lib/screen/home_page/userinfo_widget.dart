@@ -17,12 +17,10 @@ class _userInfo_widgetState extends State<userInfo_widget> {
   @override
   final _auth = FirebaseAuth.instance;
   String? userEmail;
-  String? userId;
   
   void getCurrentUserInfo() async {
     //user = await _auth.currentUser();
     userEmail = _auth.currentUser?.email; 
-    userId = _auth.currentUser?.uid; 
   }
   
 
@@ -30,11 +28,11 @@ class _userInfo_widgetState extends State<userInfo_widget> {
 
     final user = Provider.of<UserData>(context);
     
-    final user_Level = Experience.calculate_Currentlevel(user.experiences);
-    final user_RemainExp = Experience.calculate_LastExperience(user.experiences);
-    final exp_Persent = user_RemainExp/10;
+    final userLevel = Experience.calculate_Currentlevel(user.experiences);
+    final userRemainexp = Experience.calculate_LastExperience(user.experiences);
+    final expPersent = userRemainexp/10;
     updateCurrentUserInfo()async{
-      await DatabaseService(uid: userId).updateUserData(user.name,user_Level,user.experiences);
+      await DatabaseService(uid: user.uid).updateUserData(user.name,userLevel,user.experiences);
     }
     getCurrentUserInfo();
     updateCurrentUserInfo();
@@ -54,7 +52,7 @@ class _userInfo_widgetState extends State<userInfo_widget> {
         const Text("Current Level:"),
         const SizedBox(height: 20,),
         Text(
-          user_Level.toString(),
+          userLevel.toString(),
           style: const TextStyle(
             fontSize: 50,
           ),
@@ -67,8 +65,8 @@ class _userInfo_widgetState extends State<userInfo_widget> {
           animation: true,
           lineHeight: 20.0,
           animationDuration: 2000,
-          percent: exp_Persent,
-          center: Text((exp_Persent*100).toString()+"%"),
+          percent: expPersent,
+          center: Text((expPersent*100).toString()+"%"),
           linearStrokeCap: LinearStrokeCap.roundAll,
           progressColor: Colors.greenAccent,
         ),

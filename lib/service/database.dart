@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:recycle_app/models/myuser.dart';
-import 'package:recycle_app/models/user_property.dart';
 
 class DatabaseService{
 

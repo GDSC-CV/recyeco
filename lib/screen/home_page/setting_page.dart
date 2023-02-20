@@ -16,14 +16,6 @@ class _Setting_pageState extends State<Setting_page> {
 
   final _formKey = GlobalKey<FormState>();
   String _currentName = "";
-  final _auth = FirebaseAuth.instance;
-  String? userId;
-
-  void getCurrentUserInfo() async {
-    //user = await _auth.currentUser();
-    userId = _auth.currentUser?.uid; 
-  }
-
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +23,6 @@ class _Setting_pageState extends State<Setting_page> {
     //User user = Provider.of<User>(context);
     UserData userData = Provider.of<UserData>(context);
     
-    getCurrentUserInfo();
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: Form(
@@ -74,7 +65,7 @@ class _Setting_pageState extends State<Setting_page> {
               onPressed: () async {
                 if(_formKey.currentState!.validate()){
                   if(_currentName.isNotEmpty){
-                    await DatabaseService(uid: userId).updateUserData(
+                    await DatabaseService(uid: userData.uid).updateUserData(
                       _currentName,
                       userData.level,
                       userData.experiences,
