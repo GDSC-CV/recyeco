@@ -1,4 +1,7 @@
-glass
-metal
-paper
-plastic
+0 Glass
+1 Metal
+2 Paper
+3 Plastic
+4 Kitchen_waste
+5 Other
+6 Trash

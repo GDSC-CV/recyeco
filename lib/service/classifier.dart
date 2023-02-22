@@ -27,7 +27,7 @@ class ClassifierService {
 
   final String _labelsFileName = 'assets/labels.txt';
 
-  final int _labelsLength = 1001;
+  final int _labelsLength = 7;
 
   late var _probabilityProcessor;
 
@@ -55,7 +55,7 @@ class ClassifierService {
     await FirebaseModelDownloader.instance
         .getModel(
             "model",
-            FirebaseModelDownloadType.localModel,
+            FirebaseModelDownloadType.latestModel,
             FirebaseModelDownloadConditions(
               iosAllowsCellularAccess: true,
               iosAllowsBackgroundDownloading: false,
@@ -78,6 +78,10 @@ class ClassifierService {
       _outputShape = interpreter.getOutputTensor(0).shape;
       _inputType = interpreter.getInputTensor(0).type;
       _outputType = interpreter.getOutputTensor(0).type;
+      print(_inputShape);
+      print(_outputShape);
+      print(_inputType);
+      print(_outputType);
 
       _outputBuffer = TensorBuffer.createFixedSize(_outputShape, _outputType);
       _probabilityProcessor =
@@ -138,6 +142,7 @@ class ClassifierService {
 MapEntry<String, double> getTopProbability(Map<String, double> labeledProb) {
   var pq = PriorityQueue<MapEntry<String, double>>(compare);
   pq.addAll(labeledProb.entries);
+  print(pq.toString());
 
   return pq.first;
 }

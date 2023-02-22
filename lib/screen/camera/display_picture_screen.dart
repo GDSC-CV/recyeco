@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 
+import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
+import 'package:image/image.dart' as img;
+
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
-  final String category;
+  final Category category;
 
-  const DisplayPictureScreen(
-      {super.key, required this.imagePath, required this.category});
+  const DisplayPictureScreen({
+    super.key,
+    required this.imagePath,
+    required this.category,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +33,15 @@ class DisplayPictureScreen extends StatelessWidget {
           height: 36,
         ),
         Text(
-          category,
+          category.label,
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        Text(
+          'Confidence: ${category!.score.toStringAsFixed(3)}',
+          style: TextStyle(fontSize: 16),
         ),
       ]),
     );

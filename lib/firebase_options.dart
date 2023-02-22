@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '549014778793',
     projectId: 'gdsc-cv-938a5',
     storageBucket: 'gdsc-cv-938a5.appspot.com',
+    androidClientId: '549014778793-r2cjtdvpoq866tvat445vcgg05bipojj.apps.googleusercontent.com',
     iosClientId: '549014778793-t2s6sl929ne8n4jf7fddi05iestqo13l.apps.googleusercontent.com',
     iosBundleId: 'com.example.recycleApp',
   );
@@ -77,6 +78,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '549014778793',
     projectId: 'gdsc-cv-938a5',
     storageBucket: 'gdsc-cv-938a5.appspot.com',
+    androidClientId: '549014778793-r2cjtdvpoq866tvat445vcgg05bipojj.apps.googleusercontent.com',
     iosClientId: '549014778793-t2s6sl929ne8n4jf7fddi05iestqo13l.apps.googleusercontent.com',
     iosBundleId: 'com.example.recycleApp',
   );
