@@ -34,8 +34,8 @@ class ClassifierService {
   late List<String> labels;
   late String modelName;
 
-  final NormalizeOp preProcessNormalizeOp = NormalizeOp(0, 1);
-  final NormalizeOp postProcessNormalizeOp = NormalizeOp(0, 255);
+  final NormalizeOp preProcessNormalizeOp = NormalizeOp(127.5, 127.5);
+  final NormalizeOp postProcessNormalizeOp = NormalizeOp(0, 1);
 
   ClassifierService({int? numThreads}) {
     _interpreterOptions = InterpreterOptions();
@@ -142,7 +142,6 @@ class ClassifierService {
 MapEntry<String, double> getTopProbability(Map<String, double> labeledProb) {
   var pq = PriorityQueue<MapEntry<String, double>>(compare);
   pq.addAll(labeledProb.entries);
-  print(pq.toString());
 
   return pq.first;
 }
