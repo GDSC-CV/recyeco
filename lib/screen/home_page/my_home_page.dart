@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:camera/camera.dart';
 import 'package:provider/provider.dart';
 import 'package:recycle_app/models/myuser.dart';
 import 'package:recycle_app/screen/camera/take_picture_screen.dart';
@@ -17,17 +16,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   AuthService _auth = AuthService();
-
-  void pushToCamera(BuildContext context) async {
-    final cameras = await availableCameras();
-    // ignore: use_build_context_synchronously
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => TakePictureScreen(camera: cameras.first),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +37,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          pushToCamera(context);
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => TakePictureScreen(),
+            ),
+          );
         },
         tooltip: 'Take a photo',
         child: const Icon(Icons.camera_alt_rounded),
