@@ -7,7 +7,7 @@ import 'package:recycle_app/service/database.dart';
 class AuthService{
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
+  
   MyUser? _myuserFromFirebaseUser(User? user){
     return user!=null ? MyUser(uid: user.uid,is_anonymous: user.isAnonymous):null;
   }
@@ -76,7 +76,9 @@ class AuthService{
       return null;
     }
   }
-
+  Future resetPassword(String email)async{
+    await _auth.sendPasswordResetEmail(email: email);
+  }
 
   Future signOut() async{
     try{

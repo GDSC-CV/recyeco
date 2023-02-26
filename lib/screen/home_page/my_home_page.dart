@@ -7,6 +7,7 @@ import 'package:recycle_app/screen/home_page/setting_page.dart';
 import 'package:recycle_app/screen/home_page/userinfo_widget.dart';
 import 'package:recycle_app/service/auth.dart';
 import 'package:recycle_app/service/database.dart';
+import 'package:recycle_app/tools/experience_system.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
@@ -48,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: ()async{
-                await DatabaseService(uid: userData.uid).updateUserData(userData.name, userData.level, userData.experiences+13);
+                await Experience.userGainExp(userData, 13);
               },
               child: const Text("gain level"))
           ],

@@ -28,14 +28,10 @@ class _userInfo_widgetState extends State<userInfo_widget> {
 
     final user = Provider.of<UserData>(context);
     
-    final userLevel = Experience.calculate_Currentlevel(user.experiences);
     final userRemainexp = Experience.calculate_LastExperience(user.experiences);
     final expPersent = userRemainexp/10;
-    updateCurrentUserInfo()async{
-      await DatabaseService(uid: user.uid).updateUserData(user.name,userLevel,user.experiences);
-    }
+    
     getCurrentUserInfo();
-    updateCurrentUserInfo();
     
     
     return Column(
@@ -52,7 +48,7 @@ class _userInfo_widgetState extends State<userInfo_widget> {
         const Text("Current Level:"),
         const SizedBox(height: 20,),
         Text(
-          userLevel.toString(),
+          user.level.toString(),
           style: const TextStyle(
             fontSize: 50,
           ),
