@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:provider/provider.dart';
 import 'package:recycle_app/models/myuser.dart';
+import 'package:recycle_app/screen/authenticate/forget_password.dart';
 import 'package:recycle_app/screen/camera/take_picture_screen.dart';
 import 'package:recycle_app/screen/home_page/setting_page.dart';
 import 'package:recycle_app/screen/home_page/userinfo_widget.dart';
@@ -78,6 +80,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 );
+              },
+            ),
+            ListTile(
+              title: const Text('Reset Password'),
+              leading: const Icon(Icons.password),
+              onTap: () {
+                if(!(FirebaseAuth.instance.currentUser!.isAnonymous)){
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const ForgetPassword()));
+                }else{
+                  showDialog(
+                    context: context,
+                    builder: (context){
+                      return AlertDialog(
+                        content: Text("Your are currently Anonymous!"),
+                      );
+                  });
+                }
               },
             ),
             const SizedBox(height: 20,),
