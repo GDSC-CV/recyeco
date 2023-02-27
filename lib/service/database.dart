@@ -7,7 +7,16 @@ class DatabaseService{
   DatabaseService({this.uid});
 
   final CollectionReference userCollection = FirebaseFirestore.instance.collection('users');
-
+  Future initailUserData(String name,int level,int experiences,List friends,List friendRequests)async{
+    return await userCollection.doc(uid).set({
+        'name':name,
+        'level':level,
+        'experiences': experiences,
+        'friends':friends,
+        'friendRequest':friendRequests,
+      }
+    );
+  }
   Future updateUserData(String name,int level,int experiences) async{
     //print("test");
     return await userCollection.doc(uid).set({
