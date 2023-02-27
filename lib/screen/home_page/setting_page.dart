@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recycle_app/models/myuser.dart';
@@ -24,6 +23,7 @@ class _Setting_pageState extends State<Setting_page> {
     UserData userData = Provider.of<UserData>(context);
     
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.grey[300],
       body: Form(
         key: _formKey,
@@ -65,7 +65,7 @@ class _Setting_pageState extends State<Setting_page> {
               onPressed: () async {
                 if(_formKey.currentState!.validate()){
                   if(_currentName.isNotEmpty){
-                    await DatabaseService(uid: userData.uid).updateUserData(
+                    await DatabaseService(uid: userData.uid).updateUserDataInfo(
                       _currentName,
                       userData.level,
                       userData.experiences,
