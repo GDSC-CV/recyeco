@@ -8,4 +8,13 @@
     <color name="common_google_signin_btn_text_light_disabled">#DEFFFFFF</color>
     <color name="common_google_signin_btn_text_light_focused">@android:color/black</color>
     <color name="common_google_signin_btn_text_light_pressed">#DEFFFFFF</color>
+    <style name="Base.Theme.AppCompat.Dialog" parent="Base.V7.Theme.AppCompat.Dialog">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+    <style name="Base.Theme.AppCompat.Light.Dialog" parent="Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+    <style name="Base.ThemeOverlay.AppCompat.Dialog" parent="Base.V7.ThemeOverlay.AppCompat.Dialog">
+        <item name="android:windowIsFloating">false</item>
+    </style>
 </resources>

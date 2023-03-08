@@ -1,17 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\flutter_project\\recycle_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "D:\\Jessica\\recycle_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\flutter_project\\recycle_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\Jessica\\recycle_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
-                        "startOffsets": "175,831",
+                        "startOffsets": "172,817",
                         "endLines": "7,16",
                         "endColumns": "12,12",
-                        "endOffsets": "482,997"
+                        "endOffsets": "475,981"
                     },
                     "to": {
                         "startLines": "2,7",
@@ -20,6 +20,23 @@
                         "endLines": "6,9",
                         "endColumns": "12,12",
                         "endOffsets": "358,527"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-3\\9346a27f47264b8c166f01f4004f0589\\transformed\\appcompat-1.1.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "532,602,686,770,866,968,1070,1164",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "597,681,765,861,963,1065,1159,1248"
                     }
                 }
             ]
