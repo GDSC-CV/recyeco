@@ -40,7 +40,7 @@ class Articals_links extends StatelessWidget {
               return ListTile(
                 title: Text(title),
                 onTap: () async {
-                  await Experience.userGainExp(userData, 100); // Using userData from Provider
+                  await Experience.userGainExp(userData, 10); // Using userData from Provider
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => WebView(
