@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
-import 'package:image/image.dart' as img;
 
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
@@ -34,14 +33,14 @@ class DisplayPictureScreen extends StatelessWidget {
         ),
         Text(
           category.label,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
         ),
         const SizedBox(
           height: 8,
         ),
         Text(
-          'Confidence: ${category!.score.toStringAsFixed(3)}',
-          style: TextStyle(fontSize: 16),
+          'Confidence: ${category.score.toStringAsFixed(3)}',
+          style: const TextStyle(fontSize: 16),
         ),
       ]),
     );
