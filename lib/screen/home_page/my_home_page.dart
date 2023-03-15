@@ -12,6 +12,9 @@ import 'package:recycle_app/screen/home_page/articles_page.dart';
 import 'package:recycle_app/screen/home_page/articles_web.dart';
 import 'package:recycle_app/screen/home_page/articles_links.dart';
 
+import 'package:recycle_app/tools/experience_system.dart';
+
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

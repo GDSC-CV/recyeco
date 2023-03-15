@@ -308,6 +308,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "percent_indicator",
+      "rootUri": "file:///D:/Jessica/app/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/percent_indicator-4.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "platform",
       "rootUri": "file:///D:/Jessica/app/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/platform-3.1.0",
       "packageUri": "lib/",
@@ -440,7 +446,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-03-08T09:08:11.606321Z",
+  "generated": "2023-03-15T12:35:17.663439Z",
   "generator": "pub",
   "generatorVersion": "2.18.6"
 }
