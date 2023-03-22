@@ -11,8 +11,9 @@ import 'package:recycle_app/service/notify.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  initNotify();
-   runApp(const MyApp());
+  NotifyService Noti = NotifyService();
+  Noti.initialize;
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
