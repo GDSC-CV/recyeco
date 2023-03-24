@@ -10,6 +10,13 @@ import 'package:recycle_app/screen/home_page/setting_page.dart';
 import 'package:recycle_app/screen/home_page/userinfo_widget.dart';
 import 'package:recycle_app/service/auth.dart';
 import 'package:recycle_app/service/database.dart';
+
+import 'package:recycle_app/screen/home_page/articles_links.dart';
+
+import 'package:recycle_app/tools/experience_system.dart';
+
+
+
 import 'package:recycle_app/tools/experience_system.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -97,6 +104,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
+
+            
+
+            
+
+            ListTile(
+              title: const Text('Articles Links'),
+              leading: const Icon(Icons.article),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => Provider(
+                      create: (context) => userData,
+                      builder: (context, child) => Articals_links(),
+                    ),
+                  ),
+                );
+              },
+            ),
+
             ListTile(
               title: const Text('Reset Password'),
               leading: const Icon(Icons.password),
