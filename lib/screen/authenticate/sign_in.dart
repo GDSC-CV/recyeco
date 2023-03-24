@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:recycle_app/screen/authenticate/forget_password.dart';
 import 'package:recycle_app/screen/loading.dart';
 import 'package:recycle_app/tools/constants.dart';
 import 'package:recycle_app/service/auth.dart';
@@ -74,6 +75,14 @@ class _SignInState extends State<SignIn> {
                 onChanged: ((value) {
                   password=value;
                 }),
+              ),
+              TextButton(onPressed: (){
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ForgetPassword()));
+                }, child: Text("Forget Password?"),
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.white
+                ), 
               ),
               SizedBox(height: 20,),
               ElevatedButton(
@@ -152,7 +161,7 @@ class _SignInState extends State<SignIn> {
                   foregroundColor: Colors.grey[50],
                 ),
                 child: Text(
-                  'Anonymouse'
+                  'Anonymous'
                 ),
               ),
             ],
@@ -162,3 +171,6 @@ class _SignInState extends State<SignIn> {
     );
   }
 }
+
+
+        

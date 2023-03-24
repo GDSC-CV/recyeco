@@ -70,7 +70,7 @@
 60            android:name="com.google.firebase.components.ComponentDiscoveryService"
 60-->[:firebase_auth] D:\flutter_project\recycle_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 61            android:directBootAware="true"
-61-->[com.google.firebase:firebase-common:20.2.0] C:\Users\ZseRg\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:34:13-43
+61-->[com.google.firebase:firebase-common:20.3.0] C:\Users\ZseRg\.gradle\caches\transforms-3\ac20124166528b90eb750a9c2aadf745\transformed\jetified-firebase-common-20.3.0\AndroidManifest.xml:34:13-43
 62            android:exported="false" >
 62-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:66:13-37
 63            <meta-data
@@ -98,11 +98,11 @@
 74                android:value="com.google.firebase.components.ComponentRegistrar" />
 74-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\ZseRg\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:69:17-82
 75            <meta-data
-75-->[com.google.firebase:firebase-firestore:24.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\c2814ab600cd7ad8abb3930813a7dae1\transformed\jetified-firebase-firestore-24.4.1\AndroidManifest.xml:19:13-21:85
+75-->[com.google.firebase:firebase-firestore:24.4.2] C:\Users\ZseRg\.gradle\caches\transforms-3\411029df19313d39daea5da5a29de6f9\transformed\jetified-firebase-firestore-24.4.2\AndroidManifest.xml:19:13-21:85
 76                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-76-->[com.google.firebase:firebase-firestore:24.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\c2814ab600cd7ad8abb3930813a7dae1\transformed\jetified-firebase-firestore-24.4.1\AndroidManifest.xml:20:17-111
+76-->[com.google.firebase:firebase-firestore:24.4.2] C:\Users\ZseRg\.gradle\caches\transforms-3\411029df19313d39daea5da5a29de6f9\transformed\jetified-firebase-firestore-24.4.2\AndroidManifest.xml:20:17-111
 77                android:value="com.google.firebase.components.ComponentRegistrar" />
-77-->[com.google.firebase:firebase-firestore:24.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\c2814ab600cd7ad8abb3930813a7dae1\transformed\jetified-firebase-firestore-24.4.1\AndroidManifest.xml:21:17-82
+77-->[com.google.firebase:firebase-firestore:24.4.2] C:\Users\ZseRg\.gradle\caches\transforms-3\411029df19313d39daea5da5a29de6f9\transformed\jetified-firebase-firestore-24.4.2\AndroidManifest.xml:21:17-82
 78        </service>
 79
 80        <uses-library
@@ -190,17 +190,17 @@
 122        </activity>
 123
 124        <provider
-124-->[com.google.firebase:firebase-common:20.2.0] C:\Users\ZseRg\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:25:9-30:39
+124-->[com.google.firebase:firebase-common:20.3.0] C:\Users\ZseRg\.gradle\caches\transforms-3\ac20124166528b90eb750a9c2aadf745\transformed\jetified-firebase-common-20.3.0\AndroidManifest.xml:25:9-30:39
 125            android:name="com.google.firebase.provider.FirebaseInitProvider"
-125-->[com.google.firebase:firebase-common:20.2.0] C:\Users\ZseRg\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:26:13-77
+125-->[com.google.firebase:firebase-common:20.3.0] C:\Users\ZseRg\.gradle\caches\transforms-3\ac20124166528b90eb750a9c2aadf745\transformed\jetified-firebase-common-20.3.0\AndroidManifest.xml:26:13-77
 126            android:authorities="com.example.recycle_app.firebaseinitprovider"
-126-->[com.google.firebase:firebase-common:20.2.0] C:\Users\ZseRg\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:27:13-72
+126-->[com.google.firebase:firebase-common:20.3.0] C:\Users\ZseRg\.gradle\caches\transforms-3\ac20124166528b90eb750a9c2aadf745\transformed\jetified-firebase-common-20.3.0\AndroidManifest.xml:27:13-72
 127            android:directBootAware="true"
-127-->[com.google.firebase:firebase-common:20.2.0] C:\Users\ZseRg\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:28:13-43
+127-->[com.google.firebase:firebase-common:20.3.0] C:\Users\ZseRg\.gradle\caches\transforms-3\ac20124166528b90eb750a9c2aadf745\transformed\jetified-firebase-common-20.3.0\AndroidManifest.xml:28:13-43
 128            android:exported="false"
-128-->[com.google.firebase:firebase-common:20.2.0] C:\Users\ZseRg\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:29:13-37
+128-->[com.google.firebase:firebase-common:20.3.0] C:\Users\ZseRg\.gradle\caches\transforms-3\ac20124166528b90eb750a9c2aadf745\transformed\jetified-firebase-common-20.3.0\AndroidManifest.xml:29:13-37
 129            android:initOrder="100" />
-129-->[com.google.firebase:firebase-common:20.2.0] C:\Users\ZseRg\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:30:13-36
+129-->[com.google.firebase:firebase-common:20.3.0] C:\Users\ZseRg\.gradle\caches\transforms-3\ac20124166528b90eb750a9c2aadf745\transformed\jetified-firebase-common-20.3.0\AndroidManifest.xml:30:13-36
 130
 131        <activity
 131-->[com.google.android.gms:play-services-auth:20.4.1] C:\Users\ZseRg\.gradle\caches\transforms-3\3ef1a337cc5460c89cd7cfde721736d6\transformed\jetified-play-services-auth-20.4.1\AndroidManifest.xml:23:9-27:75
