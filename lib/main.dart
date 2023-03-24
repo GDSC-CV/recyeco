@@ -6,13 +6,13 @@ import 'package:recycle_app/screen/wrapper.dart';
 import 'package:recycle_app/service/auth.dart';
 import 'firebase_options.dart';
 import 'package:recycle_app/service/notify.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 //import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  NotifyService Noti = NotifyService();
-  Noti.initialize;
+  await setupNotification();
   runApp(const MyApp());
 }
 
