@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recycle_app/screen/authenticate/register.dart';
 import 'package:recycle_app/screen/authenticate/sign_in.dart';
+import 'package:recycle_app/screen/authenticate/sign_in_UI.dart';
 
 class Authenticate extends StatefulWidget {
   const Authenticate({super.key});

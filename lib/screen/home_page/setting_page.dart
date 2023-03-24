@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:recycle_app/models/myuser.dart';
@@ -16,23 +15,16 @@ class _Setting_pageState extends State<Setting_page> {
 
   final _formKey = GlobalKey<FormState>();
   String _currentName = "";
-  final _auth = FirebaseAuth.instance;
-  String? userId;
-
-  void getCurrentUserInfo() async {
-    //user = await _auth.currentUser();
-    userId = _auth.currentUser?.uid; 
-  }
-
 
   @override
   Widget build(BuildContext context) {
     
     //User user = Provider.of<User>(context);
     UserData userData = Provider.of<UserData>(context);
-    getCurrentUserInfo();
+    
     return Scaffold(
-      backgroundColor: Colors.lightBlue[100],
+      appBar: AppBar(),
+      backgroundColor: Colors.grey[300],
       body: Form(
         key: _formKey,
         child: Column(
@@ -72,11 +64,14 @@ class _Setting_pageState extends State<Setting_page> {
               ),
               onPressed: () async {
                 if(_formKey.currentState!.validate()){
-                  await DatabaseService(uid: userId).updateUserData(
-                    _currentName,
-                    userData.level,
-                    userData.experiences,
-                  );
+                  if(_currentName.isNotEmpty){
+                    await DatabaseService(uid: userData.uid).updateUserDataInfo(
+                      _currentName,
+                      userData.level,
+                      userData.experiences,
+                    );
+                  }
+                  
                   Navigator.pop(context);
                 }
               }

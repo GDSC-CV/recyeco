@@ -29,7 +29,7 @@ class _userInfo_widgetState extends State<userInfo_widget> {
     final user = Provider.of<UserData>(context);
     
     final userRemainexp = Experience.calculate_LastExperience(user.experiences);
-    final expPersent = userRemainexp/5;
+    final expPersent = userRemainexp/10;
     
     getCurrentUserInfo();
     

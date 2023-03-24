@@ -12,6 +12,8 @@ class UserData{
   final String name;
   final int level;
   final int experiences;
-
-  UserData({required this.uid,required this.name,required this.level, required this.experiences});
+  final List friends;
+  final List friendRequests;
+  
+  UserData({required this.uid,required this.name,required this.level,required this.experiences,required this.friends,required this.friendRequests});
 }
