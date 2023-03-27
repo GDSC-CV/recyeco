@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Jessica\\recycle_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\User\\Dev\\gdsc\\recycle_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jessi\\.gradle\\caches\\transforms-3\\aa701b47cec244085d46a1a42fcc7fb9\\transformed\\core-1.6.0\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\3be1c84ba3978673562f295cdead12c4\\transformed\\core-1.9.0\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
