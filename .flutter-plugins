@@ -1,8 +1,8 @@
 # This is a generated file; do not edit or check into version control.
-camera=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\camera-0.10.3\\
-camera_android=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\camera_android-0.10.4\\
-camera_avfoundation=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\camera_avfoundation-0.9.11\\
-camera_web=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\camera_web-0.3.1+1\\
+camera=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\camera-0.10.3+2\\
+camera_android=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\camera_android-0.10.5\\
+camera_avfoundation=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\camera_avfoundation-0.9.13+1\\
+camera_web=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\camera_web-0.3.1+3\\
 cloud_firestore=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\cloud_firestore-4.4.0\\
 cloud_firestore_web=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\cloud_firestore_web-3.3.0\\
 firebase_auth=D:\\ProgramFiles\\Flutter\\flutter_windows_3.3.10-stable\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_auth-4.2.6\\

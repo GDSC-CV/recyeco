@@ -27,33 +27,33 @@
     },
     {
       "name": "camera",
-      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.10.3",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.10.3+2",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "camera_android",
-      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_android-0.10.4",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_android-0.10.5",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.17"
     },
     {
       "name": "camera_avfoundation",
-      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_avfoundation-0.9.11",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_avfoundation-0.9.13+1",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.18"
     },
     {
       "name": "camera_platform_interface",
-      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_platform_interface-2.4.0",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_platform_interface-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "camera_web",
-      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_web-0.3.1+1",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/camera_web-0.3.1+3",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.17"
     },
     {
       "name": "characters",
@@ -560,7 +560,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-03-27T15:04:43.433503Z",
+  "generated": "2023-03-27T15:26:57.362075Z",
   "generator": "pub",
   "generatorVersion": "2.18.6"
 }

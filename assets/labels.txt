@@ -1,0 +1,7 @@
+Glass
+Metal
+Paper
+Plastic
+Kitchen_waste
+Other
+Trash
