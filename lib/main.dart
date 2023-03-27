@@ -5,13 +5,14 @@ import 'package:recycle_app/models/myuser.dart';
 import 'package:recycle_app/screen/wrapper.dart';
 import 'package:recycle_app/service/auth.dart';
 import 'firebase_options.dart';
+import 'package:recycle_app/service/notify.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 //import 'package:provider/provider.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await setupNotification();
   runApp(const MyApp());
 }
 
@@ -38,4 +39,3 @@ class MyApp extends StatelessWidget {
     );*/
   }
 }
-

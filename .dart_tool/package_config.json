@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "_flutterfire_internals",
-      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/_flutterfire_internals-1.0.13",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/_flutterfire_internals-1.0.18",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -166,6 +166,24 @@
     {
       "name": "firebase_core_web",
       "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-2.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
+      "name": "firebase_messaging",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging-14.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
+      "name": "firebase_messaging_platform_interface",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging_platform_interface-4.2.16",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
+      "name": "firebase_messaging_web",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging_web-3.2.17",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
@@ -560,7 +578,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-03-27T15:26:57.362075Z",
+  "generated": "2023-03-27T15:33:20.621372Z",
   "generator": "pub",
   "generatorVersion": "2.18.6"
 }
