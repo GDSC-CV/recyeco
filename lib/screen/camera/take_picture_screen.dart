@@ -64,7 +64,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                   var imageBytes = await image!.readAsBytes();
                   img.Image imageInput = img.decodeImage(imageBytes)!;
                   var pred = _classifier.predict(imageInput);
-                  if (pred.label != "Other")
+                  if (pred.label != "Other" && pred.score > 0.8)
                     await Experience.userGainExp(userData, 13);
 
                   if (!mounted) return;
@@ -100,7 +100,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                   var imageBytes = await image!.readAsBytes();
                   img.Image imageInput = img.decodeImage(imageBytes)!;
                   var pred = _classifier.predict(imageInput);
-                  if (pred.label != "Other")
+                  if (pred.label != "Other" && pred.score > 0.8)
                     await Experience.userGainExp(userData, 13);
 
                   if (!mounted) return;
