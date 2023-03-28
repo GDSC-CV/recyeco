@@ -1,11 +1,14 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
+import 'package:provider/provider.dart';
 
 import 'package:image/image.dart' as img;
 import 'package:flutter/material.dart';
+import 'package:recycle_app/models/myuser.dart';
 import 'package:recycle_app/screen/camera/display_picture_screen.dart';
 import 'package:recycle_app/service/classifier.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:recycle_app/tools/experience_system.dart';
 
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
@@ -31,6 +34,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 
   @override
   Widget build(BuildContext context) {
+    UserData userData = Provider.of<UserData>(context);
+
     return Scaffold(
       appBar: AppBar(title: const Text('Take a picture')),
       body: Center(
@@ -59,6 +64,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                   var imageBytes = await image!.readAsBytes();
                   img.Image imageInput = img.decodeImage(imageBytes)!;
                   var pred = _classifier.predict(imageInput);
+                  if (pred.label != "Other")
+                    await Experience.userGainExp(userData, 13);
 
                   if (!mounted) return;
 
@@ -93,6 +100,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                   var imageBytes = await image!.readAsBytes();
                   img.Image imageInput = img.decodeImage(imageBytes)!;
                   var pred = _classifier.predict(imageInput);
+                  if (pred.label != "Other")
+                    await Experience.userGainExp(userData, 13);
 
                   if (!mounted) return;
 
