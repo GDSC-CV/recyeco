@@ -15,8 +15,6 @@ import 'package:recycle_app/screen/home_page/articles_links.dart';
 
 import 'package:recycle_app/tools/experience_system.dart';
 
-import 'package:recycle_app/tools/experience_system.dart';
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
@@ -55,7 +53,10 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => TakePictureScreen(),
+              builder: (BuildContext context) => Provider(
+                create: (context) => userData,
+                builder: (context, child) => TakePictureScreen(),
+              ),
             ),
           );
         },
