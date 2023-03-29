@@ -16,6 +16,7 @@ import 'package:recycle_app/screen/home_page/articles_links.dart';
 import 'package:recycle_app/tools/experience_system.dart';
 
 import 'package:recycle_app/tools/experience_system.dart';
+import 'package:recycle_app/tools/friend_system.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -69,7 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: const Text('Friends'),
               leading: const Icon(Icons.people),
-              onTap: () {
+              onTap: () async{
+                await FriendSystem.updateFriend(userData);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) => Provider(

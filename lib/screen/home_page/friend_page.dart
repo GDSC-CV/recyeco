@@ -21,15 +21,16 @@ class _FriendPageState extends State<FriendPage> {
   
   @override
   Widget build(BuildContext context) {
-
+    
     UserData userData = Provider.of<UserData>(context);
     var currentUserFriendIDList = userData.friendIDs ;
     var currentUserFriendNameList = userData.friendNames;
-    var currentUserFriendExpList = userData.friendExps;
+    var currentUserFriendLevelList = userData.friendLevels;
     // void init(UserData userData)async{
     //   friendsData = await FriendSystem.getRankedFriend(userData);
     // }
     // init(userData);
+    
     return Scaffold(
         appBar: AppBar(),
         backgroundColor: Colors.blueGrey,
@@ -38,7 +39,7 @@ class _FriendPageState extends State<FriendPage> {
             SizedBox(height: 50,),
             ElevatedButton(
               onPressed:()async{
-                
+                await FriendSystem.updateFriend(userData);
                 bool message = await Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) => Provider(
@@ -50,8 +51,8 @@ class _FriendPageState extends State<FriendPage> {
                 
                 if(message==true){
                   
-                  setState(() {
-                    
+                  setState((){
+                    //await FriendSystem.updateFriend(userData);
                   });
                 }
               }, 
@@ -67,8 +68,16 @@ class _FriendPageState extends State<FriendPage> {
                   return Container(
                     height: 50,
                     color: Colors.blueGrey,
-                    child: Center(child: Text(currentUserFriendNameList[index])),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          currentUserFriendNameList[index]+" Level "+currentUserFriendLevelList[index].toString()
+                        )
+                      ],
+                    )
                   );
+                  
                 }
               ),
             ),
@@ -97,12 +106,12 @@ class _AddFriendPageState extends State<AddFriendPage> {
     //This is Request
     var currentUserFriendIDList = userData.friendIDRequests ;
     var currentUserFriendNameList = userData.friendNameRequests;
-    var currentUserFriendExpList = userData.friendExpRequests;
+    var currentUserFriendLevelList = userData.friendLevelRequests;
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
-          onPressed: (){
-            
+          onPressed: ()async{
+            await FriendSystem.updateFriend(userData);
             Navigator.pop(context,true);
           },
         ),
@@ -198,15 +207,19 @@ class _AddFriendPageState extends State<AddFriendPage> {
                           currentUserFriendNameList[index]
                         ),
                         SizedBox(width: 20,),
+                        Text(
+                          "Level "+currentUserFriendLevelList[index].toString()
+                        ),
+                        SizedBox(width: 20,),
                         IconButton(onPressed: (){
-                          FriendSystem.acceptFriend(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendExpList[index]);
-                          FriendSystem.DeleteFriendRequest(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendExpList[index]);
+                          FriendSystem.acceptFriend(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendLevelList[index]);
+                          FriendSystem.DeleteFriendRequest(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendLevelList[index]);
                           setState(() {
                             
                           });
                         }, icon: Icon(Icons.check)),
                         IconButton(onPressed: (){
-                          FriendSystem.DeleteFriendRequest(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendExpList[index]);
+                          FriendSystem.DeleteFriendRequest(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendLevelList[index]);
                           setState(() {
                             
                           });

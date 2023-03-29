@@ -16,12 +16,12 @@ class UserData{
   final List friendIDRequests;
   final List friendNames;
   final List friendNameRequests;
-  final List friendExps;
-  final List friendExpRequests;
+  final List friendLevels;
+  final List friendLevelRequests;
   
   
   UserData({required this.uid,required this.name,required this.level,
             required this.experiences,required this.friendIDs,required this.friendIDRequests,
             required this.friendNames,required this.friendNameRequests,
-            required this.friendExps,required this.friendExpRequests});
+            required this.friendLevels,required this.friendLevelRequests});
 }
