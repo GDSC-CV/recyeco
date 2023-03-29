@@ -28,14 +28,5 @@ class MyApp extends StatelessWidget {
         home: Wrapper(),
       ),
     );
-    /*
-    return MaterialApp(
-      title: 'Recycle',
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
-      ),
-      home: Wrapper(),
-      debugShowCheckedModeBanner: false,
-    );*/
   }
 }

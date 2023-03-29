@@ -236,6 +236,18 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-10.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "google_fonts",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-4.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "google_sign_in",
       "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.4.4",
       "packageUri": "lib/",
@@ -578,7 +590,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-03-27T15:33:20.621372Z",
+  "generated": "2023-03-29T08:47:02.515872Z",
   "generator": "pub",
   "generatorVersion": "2.18.6"
 }
