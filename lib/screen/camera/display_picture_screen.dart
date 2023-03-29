@@ -40,7 +40,7 @@ class DisplayPictureScreen extends StatelessWidget {
           height: 8,
         ),
         Text(
-          'Confidence: ${category!.score.toStringAsFixed(3)}',
+          'Confidence: ${category.score.toStringAsFixed(3)}',
           style: TextStyle(fontSize: 16),
         ),
       ]),
