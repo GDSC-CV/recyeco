@@ -6,36 +6,77 @@ import 'package:recycle_app/service/database.dart';
 class FriendSystem{
 
   static Future addFriend(UserData currentUserData,String uid)async{
-    var currentUserFriendList = currentUserData.friends;
-    currentUserFriendList.add(uid);
-    await DatabaseService(uid:currentUserData.uid).updateUserDataFriend(currentUserFriendList);
+    var currentUserFriendIDList = currentUserData.friendIDs ;
+    var currentUserFriendNameList = currentUserData.friendNames;
+    var currentUserFriendExpList = currentUserData.friendExps;
+    
     var otherUserDataStream = DatabaseService(uid: uid).userData;
     
-    UserData otherUserData;
-    List friendRequests = List.empty(growable: true);
-    otherUserDataStream.listen(
-      (event) {
-        otherUserData =  event;
-        friendRequests = otherUserData.friendRequests;
-      },
-      onError: (err){
-        print(err);
-        return null;
-      }
-    );
-    friendRequests.add(currentUserData.uid);
-    return await DatabaseService(uid: uid).updateUserDataFriendRequest(friendRequests);
+    UserData otherUserData=UserData(uid: '1', name: "Something went wrong", level: 1, experiences: 1, friendIDs: List.empty(), friendIDRequests: List.empty(), friendNames: List.empty(), friendNameRequests: List.empty(), friendExps: List.empty(), friendExpRequests: List.empty());
+    String otherUserId = "";
+    String otherUserName = "";
+    int otherUserExp=0;
+    List friendRequestsID = List.empty(growable: true);
+    List friendRequestsName = List.empty(growable: true);
+    List friendRequestsExp = List.empty(growable: true);
+    otherUserDataStream.firstWhere((element){
+      otherUserData =  element;
+      friendRequestsID = otherUserData.friendIDRequests;
+      friendRequestsName = otherUserData.friendNameRequests;
+      friendRequestsExp = otherUserData.friendExpRequests;
+      otherUserId = otherUserData.uid;
+      otherUserName=otherUserData.name;
+      otherUserExp=otherUserExp;
+      print(otherUserId);
+      currentUserFriendIDList.add(otherUserId);
+      currentUserFriendNameList.add(otherUserName);
+      currentUserFriendExpList.add(otherUserExp);
+      return true;
+    });
+    // otherUserDataStream.listen(
+    //   (event) {
+        
+        
+    //     //print(otherUserData.name);
+    //   },
+    //   onDone: () {
+        
+    //   },
+    //   onError: (err){
+    //     print(err);
+    //     return null;
+    //   }
+    // );
+    
+    
+    await DatabaseService(uid:currentUserData.uid).updateUserDataFriend(currentUserFriendIDList,currentUserFriendNameList,currentUserFriendExpList);
+    
+    friendRequestsID.add(currentUserData.uid);
+    friendRequestsName.add(currentUserData.name);
+    friendRequestsExp.add(currentUserData.experiences);
+    return await DatabaseService(uid: uid).updateUserDataFriendRequest(friendRequestsID,friendRequestsName,friendRequestsExp);
   }
-  static Future acceptFriend(UserData currentUserData,String uid)async{
-    var currentUserFriendList = currentUserData.friends;
-    currentUserFriendList.add(uid);
-    return await DatabaseService(uid:currentUserData.uid).updateUserDataFriend(currentUserFriendList);
+  static Future acceptFriend(UserData currentUserData,String uid,String name,int exp)async{
+    var currentUserFriendIDList = currentUserData.friendIDs ;
+    var currentUserFriendNameList = currentUserData.friendNames;
+    var currentUserFriendExpList = currentUserData.friendExps;
+    
+    currentUserFriendIDList.add(uid);
+    currentUserFriendNameList.add(name);
+    currentUserFriendExpList.add(exp);
+
+    return await DatabaseService(uid:currentUserData.uid).updateUserDataFriend(currentUserFriendIDList,currentUserFriendNameList,currentUserFriendExpList);
     
   }
-  static Future DeleteFriendRequest(UserData currentUserData,String uid)async{
-    var currentUserFriendRequestList = currentUserData.friendRequests;
-    currentUserFriendRequestList.remove(uid);
-    await DatabaseService(uid:currentUserData.uid).updateUserDataFriendRequest(currentUserFriendRequestList);
+  static Future DeleteFriendRequest(UserData currentUserData,String uid,String name,int exp)async{
+    var currentUserFriendIDList = currentUserData.friendIDRequests ;
+    var currentUserFriendNameList = currentUserData.friendNameRequests;
+    var currentUserFriendExpList = currentUserData.friendExpRequests;
+    
+    currentUserFriendIDList.remove(uid);
+    currentUserFriendNameList.remove(name);
+    currentUserFriendExpList.remove(exp);
+    await DatabaseService(uid:currentUserData.uid).updateUserDataFriendRequest(currentUserFriendIDList,currentUserFriendNameList,currentUserFriendExpList);
     
   }
   // static Future getRankedFriend(UserData currentUserData)async{
@@ -59,7 +100,7 @@ class FriendSystem{
   //     twoDList[i][1] = otherUserData.experiences;
 
   //   }
-  //   twoDList.sort((x,y)=>(x[1] as dynamic).compareTo((y[1] as dynamic)));
+  //   //twoDList.sort((x,y)=>(x[1] as dynamic).compareTo((y[1] as dynamic)));
   //   return twoDList;
     
   // }

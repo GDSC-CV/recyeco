@@ -18,12 +18,18 @@ class _FriendPageState extends State<FriendPage> {
   final _formKey = GlobalKey<FormState>();
   String _friendId = "";
   bool refresh = false;
+  
   @override
   Widget build(BuildContext context) {
 
     UserData userData = Provider.of<UserData>(context);
-    List userFriends = userData.friends;
-    
+    var currentUserFriendIDList = userData.friendIDs ;
+    var currentUserFriendNameList = userData.friendNames;
+    var currentUserFriendExpList = userData.friendExps;
+    // void init(UserData userData)async{
+    //   friendsData = await FriendSystem.getRankedFriend(userData);
+    // }
+    // init(userData);
     return Scaffold(
         appBar: AppBar(),
         backgroundColor: Colors.blueGrey,
@@ -56,12 +62,12 @@ class _FriendPageState extends State<FriendPage> {
               
               child: ListView.builder(
                 padding: const EdgeInsets.all(8),
-                itemCount: userFriends.length,
+                itemCount: currentUserFriendIDList.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     height: 50,
                     color: Colors.blueGrey,
-                    child: Center(child: Text(userFriends[index])),
+                    child: Center(child: Text(currentUserFriendNameList[index])),
                   );
                 }
               ),
@@ -88,7 +94,10 @@ class _AddFriendPageState extends State<AddFriendPage> {
   @override
   Widget build(BuildContext context) {
     UserData userData = Provider.of<UserData>(context);
-    List userFriendRequests = userData.friendRequests;
+    //This is Request
+    var currentUserFriendIDList = userData.friendIDRequests ;
+    var currentUserFriendNameList = userData.friendNameRequests;
+    var currentUserFriendExpList = userData.friendExpRequests;
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
@@ -159,7 +168,7 @@ class _AddFriendPageState extends State<AddFriendPage> {
                 'confirm'
               ),
               onPressed: () async {
-                if(userData.friends.contains(_friendId)){
+                if(userData.friendIDs.contains(_friendId)){
                   showDialog(
                     context: context,
                     builder: (context){
@@ -177,7 +186,7 @@ class _AddFriendPageState extends State<AddFriendPage> {
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.all(8),
-                itemCount: userFriendRequests.length,
+                itemCount: currentUserFriendIDList.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     //height: 50,
@@ -186,18 +195,18 @@ class _AddFriendPageState extends State<AddFriendPage> {
                       children: [
                         SizedBox(width: 20,),
                         Text(
-                          userFriendRequests[index]
+                          currentUserFriendNameList[index]
                         ),
                         SizedBox(width: 20,),
                         IconButton(onPressed: (){
-                          FriendSystem.acceptFriend(userData, userFriendRequests[index]);
-                          FriendSystem.DeleteFriendRequest(userData, userFriendRequests[index]);
+                          FriendSystem.acceptFriend(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendExpList[index]);
+                          FriendSystem.DeleteFriendRequest(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendExpList[index]);
                           setState(() {
                             
                           });
                         }, icon: Icon(Icons.check)),
                         IconButton(onPressed: (){
-                          FriendSystem.DeleteFriendRequest(userData, userFriendRequests[index]);
+                          FriendSystem.DeleteFriendRequest(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendExpList[index]);
                           setState(() {
                             
                           });
