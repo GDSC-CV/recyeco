@@ -13,7 +13,7 @@ class Home_page_wrapper extends StatelessWidget {
   
     return StreamProvider<UserData>.value(
       value: DatabaseService(uid: user!.uid).userData,
-      initialData: UserData(level: 1,name: "Bob",uid: "PP",experiences: 10,friends: List.empty(),friendRequests: List.empty()),
+      initialData: UserData(level: 1,name: "Bob",uid: "PP",experiences: 10,friendIDs: List.empty(),friendIDRequests: List.empty(),friendNames: List.empty(),friendNameRequests: List.empty(),friendLevels: List.empty(),friendLevelRequests: List.empty()),
       builder: (context, child){
         return const MyHomePage(title: "Recycle");
       }

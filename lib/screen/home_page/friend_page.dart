@@ -17,14 +17,105 @@ class _FriendPageState extends State<FriendPage> {
   
   final _formKey = GlobalKey<FormState>();
   String _friendId = "";
-
+  bool refresh = false;
+  
   @override
   Widget build(BuildContext context) {
-
+    
     UserData userData = Provider.of<UserData>(context);
-
+    var currentUserFriendIDList = userData.friendIDs ;
+    var currentUserFriendNameList = userData.friendNames;
+    var currentUserFriendLevelList = userData.friendLevels;
+    // void init(UserData userData)async{
+    //   friendsData = await FriendSystem.getRankedFriend(userData);
+    // }
+    // init(userData);
+    
     return Scaffold(
-      appBar: AppBar(),
+        appBar: AppBar(),
+        backgroundColor: Colors.blueGrey,
+        body: Column(
+          children: [
+            SizedBox(height: 50,),
+            ElevatedButton(
+              onPressed:()async{
+                await FriendSystem.updateFriend(userData);
+                bool message = await Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => Provider(
+                      create: (context) => userData,
+                      builder: (context, child) => const AddFriendPage(),
+                    ),
+                  ),
+                );
+                
+                if(message==true){
+                  
+                  setState((){
+                    //await FriendSystem.updateFriend(userData);
+                  });
+                }
+              }, 
+              child: Text("Add friend")
+            ),
+            Expanded(
+              
+              
+              child: ListView.builder(
+                padding: const EdgeInsets.all(8),
+                itemCount: currentUserFriendIDList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    height: 50,
+                    color: Colors.blueGrey,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          currentUserFriendNameList[index]+" Level "+currentUserFriendLevelList[index].toString()
+                        )
+                      ],
+                    )
+                  );
+                  
+                }
+              ),
+            ),
+            
+          ]
+        )
+      );
+    
+  }
+}
+
+//add Friend Page
+class AddFriendPage extends StatefulWidget {
+  const AddFriendPage({super.key});
+
+  @override
+  State<AddFriendPage> createState() => _AddFriendPageState();
+}
+
+class _AddFriendPageState extends State<AddFriendPage> {
+  final _formKey = GlobalKey<FormState>();
+  String _friendId = "";
+  @override
+  Widget build(BuildContext context) {
+    UserData userData = Provider.of<UserData>(context);
+    //This is Request
+    var currentUserFriendIDList = userData.friendIDRequests ;
+    var currentUserFriendNameList = userData.friendNameRequests;
+    var currentUserFriendLevelList = userData.friendLevelRequests;
+    return Scaffold(
+      appBar: AppBar(
+        leading: BackButton(
+          onPressed: ()async{
+            await FriendSystem.updateFriend(userData);
+            Navigator.pop(context,true);
+          },
+        ),
+      ),
       backgroundColor: Colors.grey[300],
       body: Form(
         key: _formKey,
@@ -86,7 +177,7 @@ class _FriendPageState extends State<FriendPage> {
                 'confirm'
               ),
               onPressed: () async {
-                if(userData.friends.contains(_friendId)){
+                if(userData.friendIDs.contains(_friendId)){
                   showDialog(
                     context: context,
                     builder: (context){
@@ -101,6 +192,44 @@ class _FriendPageState extends State<FriendPage> {
                
               
             ),
+            Expanded(
+              child: ListView.builder(
+                padding: const EdgeInsets.all(8),
+                itemCount: currentUserFriendIDList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    //height: 50,
+                    color: Colors.blueGrey,
+                    child: Row(
+                      children: [
+                        SizedBox(width: 20,),
+                        Text(
+                          currentUserFriendNameList[index]
+                        ),
+                        SizedBox(width: 20,),
+                        Text(
+                          "Level "+currentUserFriendLevelList[index].toString()
+                        ),
+                        SizedBox(width: 20,),
+                        IconButton(onPressed: (){
+                          FriendSystem.acceptFriend(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendLevelList[index]);
+                          FriendSystem.DeleteFriendRequest(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendLevelList[index]);
+                          setState(() {
+                            
+                          });
+                        }, icon: Icon(Icons.check)),
+                        IconButton(onPressed: (){
+                          FriendSystem.DeleteFriendRequest(userData,currentUserFriendIDList[index],currentUserFriendNameList[index],currentUserFriendLevelList[index]);
+                          setState(() {
+                            
+                          });
+                        }, icon: Icon(Icons.cancel_outlined))
+                      ],
+                    ),
+                  );
+                }
+              ),
+            )
             
           ],
         )
