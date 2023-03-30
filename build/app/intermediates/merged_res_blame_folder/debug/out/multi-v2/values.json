@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\User\\Dev\\gdsc\\recycle_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\User\\Dev\\gdsc\\recyeco\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\38e30c664341fe5bfcc1d9de04582443\\transformed\\browser-1.4.0\\res\\values\\values.xml",
@@ -40,24 +40,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\e8b360aab1e9f882b7fc0740167eea99\\transformed\\lifecycle-viewmodel-2.5.1\\res\\values\\values.xml",
+                    "source": "C:\\Users\\User\\Dev\\gdsc\\recyeco\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "49",
-                        "endOffsets": "100"
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614,711",
+                        "endColumns": "143,81,103,108,119,96,73",
+                        "endOffsets": "194,276,380,489,609,706,780"
                     },
                     "to": {
-                        "startLines": "108",
-                        "startColumns": "4",
-                        "startOffsets": "6591",
-                        "endColumns": "49",
-                        "endOffsets": "6636"
+                        "startLines": "130,135,136,137,138,139,140",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "9180,9621,9703,9807,9916,10036,10133",
+                        "endColumns": "143,81,103,108,119,96,73",
+                        "endOffsets": "9319,9698,9802,9911,10031,10128,10202"
                     }
                 },
                 {
-                    "source": "C:\\Users\\User\\Dev\\gdsc\\recycle_app\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\User\\Dev\\gdsc\\recyeco\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -76,6 +76,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\e8b360aab1e9f882b7fc0740167eea99\\transformed\\lifecycle-viewmodel-2.5.1\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "49",
+                        "endOffsets": "100"
+                    },
+                    "to": {
+                        "startLines": "108",
+                        "startColumns": "4",
+                        "startOffsets": "6591",
+                        "endColumns": "49",
+                        "endOffsets": "6636"
+                    }
+                },
+                {
                     "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\f20b4cbee5d172b16cfaea4a2c26ea87\\transformed\\jetified-firebase-messaging-23.1.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -90,23 +107,6 @@
                         "startOffsets": "9539",
                         "endColumns": "81",
                         "endOffsets": "9616"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\User\\Dev\\gdsc\\recycle_app\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614,711",
-                        "endColumns": "143,81,103,108,119,96,73",
-                        "endOffsets": "194,276,380,489,609,706,780"
-                    },
-                    "to": {
-                        "startLines": "130,135,136,137,138,139,140",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "9180,9621,9703,9807,9916,10036,10133",
-                        "endColumns": "143,81,103,108,119,96,73",
-                        "endOffsets": "9319,9698,9802,9911,10031,10128,10202"
                     }
                 },
                 {

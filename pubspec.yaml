@@ -55,6 +55,8 @@ dependencies:
   firebase_messaging: ^14.3.0
   font_awesome_flutter: ^10.4.0
   google_fonts: ^4.0.3
+  flutter_animate: ^4.1.1+1
+  simple_gradient_text: ^1.2.4
   #flutter_webview_plugin: ^0.4.0
 
 

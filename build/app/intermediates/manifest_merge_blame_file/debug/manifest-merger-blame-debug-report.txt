@@ -13,23 +13,23 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\User\Dev\gdsc\recycle_app\android\app\src\debug\AndroidManifest.xml:7:5-66
-15-->C:\Users\User\Dev\gdsc\recycle_app\android\app\src\debug\AndroidManifest.xml:7:22-64
+15-->C:\Users\User\Dev\gdsc\recyeco\android\app\src\debug\AndroidManifest.xml:7:5-66
+15-->C:\Users\User\Dev\gdsc\recyeco\android\app\src\debug\AndroidManifest.xml:7:22-64
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->C:\Users\User\Dev\gdsc\recycle_app\android\app\src\main\AndroidManifest.xml:3:5-79
-16-->C:\Users\User\Dev\gdsc\recycle_app\android\app\src\main\AndroidManifest.xml:3:22-76
+16-->C:\Users\User\Dev\gdsc\recyeco\android\app\src\main\AndroidManifest.xml:3:5-79
+16-->C:\Users\User\Dev\gdsc\recyeco\android\app\src\main\AndroidManifest.xml:3:22-76
 17    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Permissions options for the `notification` group -->
-17-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-68
-17-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-65
+17-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-68
+17-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-65
 18    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-18-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-77
-18-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-74
+18-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-77
+18-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-74
 19    <uses-permission android:name="android.permission.CAMERA" />
-19-->[:camera_android] C:\Users\User\Dev\gdsc\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-65
-19-->[:camera_android] C:\Users\User\Dev\gdsc\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-62
+19-->[:camera_android] C:\Users\User\Dev\gdsc\recyeco\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-65
+19-->[:camera_android] C:\Users\User\Dev\gdsc\recyeco\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-62
 20    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-20-->[:camera_android] C:\Users\User\Dev\gdsc\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-71
-20-->[:camera_android] C:\Users\User\Dev\gdsc\recycle_app\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-68
+20-->[:camera_android] C:\Users\User\Dev\gdsc\recyeco\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-71
+20-->[:camera_android] C:\Users\User\Dev\gdsc\recyeco\build\camera_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-68
 21    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 21-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\User\.gradle\caches\transforms-3\eaed7886d53cb1ba0475f52afb0dc686\transformed\jetified-firebase-iid-21.1.0\AndroidManifest.xml:26:5-82
 21-->[com.google.firebase:firebase-iid:21.1.0] C:\Users\User\.gradle\caches\transforms-3\eaed7886d53cb1ba0475f52afb0dc686\transformed\jetified-firebase-iid-21.1.0\AndroidManifest.xml:26:22-79
@@ -86,43 +86,43 @@
 66            android:value="2" />
 67
 68        <service
-68-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recycle_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+68-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recyeco\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
 69            android:name="com.google.firebase.components.ComponentDiscoveryService"
-69-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recycle_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+69-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recyeco\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 70            android:directBootAware="true"
 70-->[com.google.firebase:firebase-common:20.3.0] C:\Users\User\.gradle\caches\transforms-3\ac20124166528b90eb750a9c2aadf745\transformed\jetified-firebase-common-20.3.0\AndroidManifest.xml:34:13-43
 71            android:exported="false" >
 71-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\User\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:66:13-37
 72            <meta-data
-72-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recycle_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+72-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recyeco\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 73                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-73-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recycle_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
+73-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recyeco\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
 74                android:value="com.google.firebase.components.ComponentRegistrar" />
-74-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recycle_app\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+74-->[:cloud_firestore] C:\Users\User\Dev\gdsc\recyeco\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 75            <meta-data
-75-->[:firebase_auth] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+75-->[:firebase_auth] C:\Users\User\Dev\gdsc\recyeco\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 76                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-76-->[:firebase_auth] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+76-->[:firebase_auth] C:\Users\User\Dev\gdsc\recyeco\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 77                android:value="com.google.firebase.components.ComponentRegistrar" />
-77-->[:firebase_auth] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+77-->[:firebase_auth] C:\Users\User\Dev\gdsc\recyeco\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 78            <meta-data
-78-->[:firebase_ml_model_downloader] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_ml_model_downloader\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+78-->[:firebase_ml_model_downloader] C:\Users\User\Dev\gdsc\recyeco\build\firebase_ml_model_downloader\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 79                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firebase_ml_model_downloader.FlutterFirebaseAppRegistrar"
-79-->[:firebase_ml_model_downloader] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_ml_model_downloader\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-147
+79-->[:firebase_ml_model_downloader] C:\Users\User\Dev\gdsc\recyeco\build\firebase_ml_model_downloader\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-147
 80                android:value="com.google.firebase.components.ComponentRegistrar" />
-80-->[:firebase_ml_model_downloader] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_ml_model_downloader\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+80-->[:firebase_ml_model_downloader] C:\Users\User\Dev\gdsc\recyeco\build\firebase_ml_model_downloader\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 81            <meta-data
-81-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-40:85
+81-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-40:85
 82                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
-82-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:39:17-128
+82-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:39:17-128
 83                android:value="com.google.firebase.components.ComponentRegistrar" />
-83-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:40:17-82
+83-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:40:17-82
 84            <meta-data
-84-->[:firebase_core] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+84-->[:firebase_core] C:\Users\User\Dev\gdsc\recyeco\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 85                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-85-->[:firebase_core] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+85-->[:firebase_core] C:\Users\User\Dev\gdsc\recyeco\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 86                android:value="com.google.firebase.components.ComponentRegistrar" />
-86-->[:firebase_core] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+86-->[:firebase_core] C:\Users\User\Dev\gdsc\recyeco\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 87            <meta-data
 87-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\User\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:67:13-69:85
 88                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
@@ -167,69 +167,69 @@
 107-->[com.google.firebase:firebase-installations:17.1.2] C:\Users\User\.gradle\caches\transforms-3\5dcb539ab6180e04e51869aae48e2df6\transformed\jetified-firebase-installations-17.1.2\AndroidManifest.xml:19:17-82
 108        </service>
 109        <service
-109-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-19:72
+109-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-19:72
 110            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
-110-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-107
+110-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-107
 111            android:exported="false"
-111-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
+111-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
 112            android:permission="android.permission.BIND_JOB_SERVICE" />
-112-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-69
+112-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-69
 113        <service
-113-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:9-26:19
+113-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:20:9-26:19
 114            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
-114-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-97
+114-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-97
 115            android:exported="false" >
-115-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-37
+115-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-37
 116            <intent-filter>
-116-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-25:29
+116-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-25:29
 117                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-117-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-78
-117-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-75
+117-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-78
+117-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-75
 118            </intent-filter>
 119        </service>
 120
 121        <receiver
-121-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:28:9-35:20
+121-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:28:9-35:20
 122            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
-122-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:13-98
+122-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:29:13-98
 123            android:exported="true"
-123-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-36
+123-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-36
 124            android:permission="com.google.android.c2dm.permission.SEND" >
-124-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-73
+124-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-73
 125            <intent-filter>
-125-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-34:29
+125-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-34:29
 126                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-126-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:33:17-81
-126-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:33:25-78
+126-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:33:17-81
+126-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:33:25-78
 127            </intent-filter>
 128        </receiver>
 129
 130        <provider
-130-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:43:9-47:38
+130-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:43:9-47:38
 131            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
-131-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:44:13-102
+131-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:44:13-102
 132            android:authorities="com.example.recycle_app.flutterfirebasemessaginginitprovider"
-132-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:45:13-88
+132-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:45:13-88
 133            android:exported="false"
-133-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:46:13-37
+133-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:46:13-37
 134            android:initOrder="99" />
-134-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:47:13-35
+134-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:47:13-35
 135        <provider
-135-->[:image_picker_android] C:\Users\User\Dev\gdsc\recycle_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+135-->[:image_picker_android] C:\Users\User\Dev\gdsc\recyeco\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
 136            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-136-->[:image_picker_android] C:\Users\User\Dev\gdsc\recycle_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
+136-->[:image_picker_android] C:\Users\User\Dev\gdsc\recyeco\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
 137            android:authorities="com.example.recycle_app.flutter.image_provider"
-137-->[:image_picker_android] C:\Users\User\Dev\gdsc\recycle_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
+137-->[:image_picker_android] C:\Users\User\Dev\gdsc\recyeco\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
 138            android:exported="false"
-138-->[:image_picker_android] C:\Users\User\Dev\gdsc\recycle_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+138-->[:image_picker_android] C:\Users\User\Dev\gdsc\recyeco\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
 139            android:grantUriPermissions="true" >
-139-->[:image_picker_android] C:\Users\User\Dev\gdsc\recycle_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+139-->[:image_picker_android] C:\Users\User\Dev\gdsc\recyeco\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
 140            <meta-data
-140-->[:image_picker_android] C:\Users\User\Dev\gdsc\recycle_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
+140-->[:image_picker_android] C:\Users\User\Dev\gdsc\recyeco\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
 141                android:name="android.support.FILE_PROVIDER_PATHS"
-141-->[:image_picker_android] C:\Users\User\Dev\gdsc\recycle_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+141-->[:image_picker_android] C:\Users\User\Dev\gdsc\recyeco\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
 142                android:resource="@xml/flutter_image_picker_file_paths" />
-142-->[:image_picker_android] C:\Users\User\Dev\gdsc\recycle_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
+142-->[:image_picker_android] C:\Users\User\Dev\gdsc\recyeco\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
 143        </provider>
 144
 145        <activity
@@ -337,10 +337,10 @@
 200            android:permission="com.google.android.c2dm.permission.SEND" >
 200-->[com.google.firebase:firebase-messaging:23.1.1] C:\Users\User\.gradle\caches\transforms-3\f20b4cbee5d172b16cfaea4a2c26ea87\transformed\jetified-firebase-messaging-23.1.1\AndroidManifest.xml:34:13-73
 201            <intent-filter>
-201-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-34:29
+201-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-34:29
 202                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-202-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:33:17-81
-202-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:33:25-78
+202-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:33:17-81
+202-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:33:25-78
 203            </intent-filter>
 204        </receiver>
 205        <!--
@@ -356,10 +356,10 @@
 212            android:exported="false" >
 212-->[com.google.firebase:firebase-messaging:23.1.1] C:\Users\User\.gradle\caches\transforms-3\f20b4cbee5d172b16cfaea4a2c26ea87\transformed\jetified-firebase-messaging-23.1.1\AndroidManifest.xml:47:13-37
 213            <intent-filter android:priority="-500" >
-213-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-25:29
+213-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-25:29
 214                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-214-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-78
-214-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recycle_app\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-75
+214-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-78
+214-->[:firebase_messaging] C:\Users\User\Dev\gdsc\recyeco\build\firebase_messaging\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-75
 215            </intent-filter>
 216        </service>
 217

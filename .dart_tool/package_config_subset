@@ -1,7 +1,7 @@
 recycle_app
 2.18
-file:///C:/Users/User/Dev/gdsc/recycle_app/
-file:///C:/Users/User/Dev/gdsc/recycle_app/lib/
+file:///C:/Users/User/Dev/gdsc/recyeco/
+file:///C:/Users/User/Dev/gdsc/recyeco/lib/
 _flutterfire_internals
 2.16
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/_flutterfire_internals-1.0.18/
@@ -134,6 +134,10 @@ firebase_ml_model_downloader_platform_interface
 2.16
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_ml_model_downloader_platform_interface-0.1.1+32/
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_ml_model_downloader_platform_interface-0.1.1+32/lib/
+flutter_animate
+2.17
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_animate-4.1.1+1/
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_animate-4.1.1+1/lib/
 flutter_lints
 2.17
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/
@@ -298,6 +302,10 @@ quiver
 2.17
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.2.1/
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.2.1/lib/
+simple_gradient_text
+2.16
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/simple_gradient_text-1.2.4/
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/simple_gradient_text-1.2.4/lib/
 source_span
 2.14
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.9.0/

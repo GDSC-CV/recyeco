@@ -206,6 +206,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_animate",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_animate-4.1.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1",
       "packageUri": "lib/",
@@ -464,6 +470,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "simple_gradient_text",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/simple_gradient_text-1.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -590,7 +602,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-03-29T08:47:02.515872Z",
+  "generated": "2023-03-30T16:18:23.489527Z",
   "generator": "pub",
   "generatorVersion": "2.18.6"
 }
