@@ -101,6 +101,9 @@ class _SignInState extends State<SignIn> {
                                     //controller: _model.textController1,
                                     autofocus: true,
                                     obscureText: false,
+                                    onChanged: ((value) {
+                                      email = value;
+                                    }),
                                     decoration: InputDecoration(
                                       hintText: 'account',
                                       hintStyle: GoogleFonts.getFont(
@@ -169,6 +172,9 @@ class _SignInState extends State<SignIn> {
                                         //controller: _model.textController2,
                                         autofocus: true,
                                         obscureText: true,
+                                        onChanged: ((value) {
+                                          password = value;
+                                        }),
                                         decoration: InputDecoration(
                                           hintText: 'password',
                                           hintStyle: GoogleFonts.getFont(
@@ -255,6 +261,31 @@ class _SignInState extends State<SignIn> {
                                     },
                                   ),
                                 ],
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0, 0, 20, 10),
+                                child: InkWell(
+                                  onTap: () async {
+                                    widget.toggle();
+                                  },
+                                  child: Text(
+                                    error,
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.getFont(
+                                        'Playfair Display',
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 16,
+                                        color:
+                                            Color.fromARGB(255, 160, 21, 220)),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
