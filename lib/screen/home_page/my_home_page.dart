@@ -17,6 +17,7 @@ import 'package:recycle_app/service/classifier.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:recycle_app/models/myuser.dart';
 import 'package:recycle_app/tools/experience_system.dart';
+import 'package:recycle_app/screen/home_page/articles_links.dart';
 
 class CameraWidget extends StatefulWidget {
   const CameraWidget({Key? key}) : super(key: key);
@@ -449,7 +450,14 @@ class _CameraWidgetState extends State<CameraWidget> {
                             size: 35,
                           ),
                           onPressed: () async {
-                            // context.pushNamed('Article');
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => Provider(
+                                  create: (context) => userData,
+                                  builder: (context, child) => Articals_links(),
+                                ),
+                              ),
+                            ); // context.pushNamed('Article');
                           },
                         ),
                         IconButton(
