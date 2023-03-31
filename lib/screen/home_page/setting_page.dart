@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -5,6 +6,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:recycle_app/models/myuser.dart';
+import 'package:recycle_app/screen/authenticate/forget_password.dart';
+import 'package:recycle_app/screen/home_page/change_name.dart';
 import 'package:recycle_app/screen/home_page/friend_page.dart';
 import 'package:recycle_app/service/auth.dart';
 import 'package:recycle_app/tools/friend_system.dart';
@@ -21,12 +24,13 @@ class SettingWidget extends StatefulWidget {
 class _SettingWidgetState extends State<SettingWidget>{
   
   final AuthService _auth = AuthService();
-
-
+  
   @override
   Widget build(BuildContext context) {
-    UserData userData = Provider.of<UserData>(context);
-
+    UserData userData = Provider.of<UserData>(context,listen: true);
+    String userName = userData.name;
+    String userLevel = userData.level.toString();
+    //print(userName);
     return Scaffold(
       
       backgroundColor: Colors.white,
@@ -127,7 +131,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'User Name',
+                                    userName,
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.getFont(
                                       'Playfair Display',
@@ -155,6 +159,24 @@ class _SettingWidgetState extends State<SettingWidget>{
                                 ),
                                 onPressed: () async {
                                   print("press UserName");
+                                  bool message = await Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) => Provider(
+                                        create: (context) => userData,
+                                        builder: (context, child) => const ChangeName_page(),
+                                      ),
+                                    ),
+                                    
+                                  );
+                                  await Future.delayed(const Duration(seconds: 10));
+                                      
+                                  if(message==true){
+                  
+                                    setState((){
+                                      print("rebuild");
+                                      //await FriendSystem.updateFriend(userData);
+                                    });
+                                  }
                                   // await Future.delayed(
                                   //     const Duration(milliseconds: 1000));
                                 },
@@ -200,7 +222,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Level 13',
+                                    'Level '+userLevel,
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.getFont(
                                       'Playfair Display',
@@ -271,7 +293,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Reset Passward',
+                                    'Reset Password',
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.getFont(
                                       'Playfair Display',
@@ -298,8 +320,20 @@ class _SettingWidgetState extends State<SettingWidget>{
                                   size: 40,
                                 ),
                                 onPressed: () async {
-                                  await Future.delayed(
-                                      const Duration(milliseconds: 1000));
+                                  if (!(FirebaseAuth.instance.currentUser!.isAnonymous)) {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => const ForgetPassword()));
+                                  } else {
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            content: Text("Your are currently Anonymous!"),
+                                          );
+                                        });
+                                  }
                                 },
                               ),
                             ),
