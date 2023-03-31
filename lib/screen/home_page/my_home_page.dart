@@ -11,19 +11,33 @@ import 'package:recycle_app/service/auth.dart';
 import 'package:recycle_app/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
+import 'package:image/image.dart' as img;
+import 'package:recycle_app/screen/camera/display_picture_screen.dart';
+import 'package:recycle_app/service/classifier.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:recycle_app/models/myuser.dart';
+import 'package:recycle_app/tools/experience_system.dart';
+
 class CameraWidget extends StatefulWidget {
   const CameraWidget({Key? key}) : super(key: key);
-  
+
   @override
   _CameraWidgetState createState() => _CameraWidgetState();
 }
 
-class _CameraWidgetState extends State<CameraWidget>{
-
+class _CameraWidgetState extends State<CameraWidget> {
   final AuthService _auth = AuthService();
+  late ClassifierService _classifier;
+  late Future _initializeClassifierFuture;
+  final ImagePicker _picker = ImagePicker();
 
+  @override
+  void initState() {
+    super.initState();
+    _classifier = ClassifierService();
+    _initializeClassifierFuture = _classifier.initialize();
+  }
 
-  
   @override
   Widget build(BuildContext context) {
     UserData userData = Provider.of<UserData>(context);
@@ -54,9 +68,7 @@ class _CameraWidgetState extends State<CameraWidget>{
                           Container(
                             width: 287.1,
                             height: 67,
-                            decoration: BoxDecoration(
-                              color: Colors.white
-                            ),
+                            decoration: BoxDecoration(color: Colors.white),
                             alignment: AlignmentDirectional(0, 1),
                             child: Text(
                               'welcome to',
@@ -73,9 +85,7 @@ class _CameraWidgetState extends State<CameraWidget>{
                             child: Container(
                               width: 328.1,
                               height: 100,
-                              decoration: BoxDecoration(
-                                color: Colors.white
-                              ),
+                              decoration: BoxDecoration(color: Colors.white),
                               child: GradientText(
                                 'Recyeco',
                                 textAlign: TextAlign.center,
@@ -95,9 +105,7 @@ class _CameraWidgetState extends State<CameraWidget>{
                             child: Container(
                               width: 328.1,
                               height: 100,
-                              decoration: BoxDecoration(
-                                color: Colors.white
-                              ),
+                              decoration: BoxDecoration(color: Colors.white),
                               child: Image.asset(
                                 'assets/images/recycle.png',
                                 width: 100,
@@ -119,8 +127,33 @@ class _CameraWidgetState extends State<CameraWidget>{
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                       child: InkWell(
-                        onTap: (){
-                          print('Camera button pressed ...');
+                        onTap: () async {
+                          try {
+                            await _initializeClassifierFuture;
+
+                            final XFile? image = await _picker.pickImage(
+                              source: ImageSource.camera,
+                            );
+
+                            var imageBytes = await image!.readAsBytes();
+                            img.Image imageInput = img.decodeImage(imageBytes)!;
+                            var pred = _classifier.predict(imageInput);
+                            if (pred.label != "Other" && pred.score > 0.8)
+                              await Experience.userGainExp(userData, 13);
+
+                            if (!mounted) return;
+
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => DisplayPictureScreen(
+                                  imagePath: image.path,
+                                  category: pred,
+                                ),
+                              ),
+                            );
+                          } catch (e) {
+                            print(e);
+                          }
                         },
                         child: Container(
                           width: 179.8,
@@ -140,11 +173,10 @@ class _CameraWidgetState extends State<CameraWidget>{
                             // borderRadius: 30,
                             // borderWidth: 1,
                             // buttonSize: 80,
-                          
+
                             Icons.photo_camera_outlined,
                             color: Colors.white,
                             size: 60,
-                            
                           ),
                         ),
                       ),
@@ -205,8 +237,33 @@ class _CameraWidgetState extends State<CameraWidget>{
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                       child: InkWell(
-                        onTap: (){
-                          print("image");
+                        onTap: () async {
+                          try {
+                            await _initializeClassifierFuture;
+
+                            final XFile? image = await _picker.pickImage(
+                              source: ImageSource.gallery,
+                            );
+
+                            var imageBytes = await image!.readAsBytes();
+                            img.Image imageInput = img.decodeImage(imageBytes)!;
+                            var pred = _classifier.predict(imageInput);
+                            if (pred.label != "Other" && pred.score > 0.8)
+                              await Experience.userGainExp(userData, 13);
+
+                            if (!mounted) return;
+
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => DisplayPictureScreen(
+                                  imagePath: image.path,
+                                  category: pred,
+                                ),
+                              ),
+                            );
+                          } catch (e) {
+                            print(e);
+                          }
                         },
                         child: Container(
                           width: 179.8,
@@ -314,7 +371,8 @@ class _CameraWidgetState extends State<CameraWidget>{
                               MaterialPageRoute(
                                 builder: (BuildContext context) => Provider(
                                   create: (context) => userData,
-                                  builder: (context, child) => const FriendWidget(),
+                                  builder: (context, child) =>
+                                      const FriendWidget(),
                                 ),
                               ),
                             );
@@ -349,7 +407,8 @@ class _CameraWidgetState extends State<CameraWidget>{
                               MaterialPageRoute(
                                 builder: (BuildContext context) => Provider(
                                   create: (context) => userData,
-                                  builder: (context, child) => const SettingWidget(),
+                                  builder: (context, child) =>
+                                      const SettingWidget(),
                                 ),
                               ),
                             );

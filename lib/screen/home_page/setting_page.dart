@@ -13,7 +13,6 @@ import 'package:recycle_app/service/auth.dart';
 import 'package:recycle_app/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-
 class SettingWidget extends StatefulWidget {
   const SettingWidget({Key? key}) : super(key: key);
 
@@ -21,8 +20,7 @@ class SettingWidget extends StatefulWidget {
   _SettingWidgetState createState() => _SettingWidgetState();
 }
 
-class _SettingWidgetState extends State<SettingWidget>{
-  
+class _SettingWidgetState extends State<SettingWidget> {
   final AuthService _auth = AuthService();
   
   @override
@@ -32,7 +30,6 @@ class _SettingWidgetState extends State<SettingWidget>{
     String userLevel = userData.level.toString();
     //print(userName);
     return Scaffold(
-      
       backgroundColor: Colors.white,
       body: SafeArea(
         child: GestureDetector(
@@ -58,9 +55,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                             child: Container(
                               width: 328.1,
                               height: 100,
-                              decoration: BoxDecoration(
-                                color: Colors.white
-                              ),
+                              decoration: BoxDecoration(color: Colors.white),
                               alignment: AlignmentDirectional(0, -1),
                               child: GradientText(
                                 'Settings',
@@ -145,7 +140,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 10),
                               child: IconButton(
                                 // borderColor: Color(0x00FFFFFF),
                                 // borderRadius: 30,
@@ -154,7 +149,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                                 // fillColor: Colors.white,
                                 icon: Icon(
                                   Icons.double_arrow_rounded,
-                                  color: Color(0xFF6420AB),
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                   size: 40,
                                 ),
                                 onPressed: () async {
@@ -187,7 +182,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 10),
                       child: Container(
                         width: 100,
                         height: 67.8,
@@ -236,22 +231,21 @@ class _SettingWidgetState extends State<SettingWidget>{
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 10),
                               child: IconButton(
-                                // borderColor: Color(0x00FFFFFF),
-                                // borderRadius: 30,
-                                // borderWidth: 1,
-                                // buttonSize: 55,
-                                // fillColor: Colors.white,
-                                icon: Icon(
-                                  Icons.double_arrow_rounded,
-                                  color: Color(0xFF6420AB),
-                                  size: 40,
-                                ),
-                                onPressed: () async {
-                                  print("press Level");
-                                }
-                              ),
+                                  // borderColor: Color(0x00FFFFFF),
+                                  // borderRadius: 30,
+                                  // borderWidth: 1,
+                                  // buttonSize: 55,
+                                  // fillColor: Colors.white,
+                                  icon: Icon(
+                                    Icons.double_arrow_rounded,
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    size: 40,
+                                  ),
+                                  onPressed: () async {
+                                    print("press Level");
+                                  }),
                             ),
                           ],
                         ),
@@ -307,7 +301,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 10),
                               child: IconButton(
                                 // borderColor: Color(0x00FFFFFF),
                                 // borderRadius: 30,
@@ -316,7 +310,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                                 // fillColor: Colors.white,
                                 icon: Icon(
                                   Icons.double_arrow_rounded,
-                                  color: Color(0xFF6420AB),
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                   size: 40,
                                 ),
                                 onPressed: () async {
@@ -391,7 +385,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 10),
                               child: IconButton(
                                 // borderColor: Color(0x00FFFFFF),
                                 // borderRadius: 30,
@@ -400,12 +394,13 @@ class _SettingWidgetState extends State<SettingWidget>{
                                 // fillColor: Colors.white,
                                 icon: Icon(
                                   Icons.double_arrow_rounded,
-                                  color: Color(0xFF6420AB),
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                   size: 40,
                                 ),
                                 onPressed: () async {
                                   await _auth.signOut();
-                                  Navigator.of(context).popUntil((route) => route.isFirst);
+                                  Navigator.of(context)
+                                      .popUntil((route) => route.isFirst);
                                 },
                               ),
                             ),
@@ -480,7 +475,8 @@ class _SettingWidgetState extends State<SettingWidget>{
                           ),
                           onPressed: () {
                             // print('IconButton pressed ...');
-                            Navigator.of(context).popUntil((route) => route.isFirst);
+                            Navigator.of(context)
+                                .popUntil((route) => route.isFirst);
                           },
                         ),
                         IconButton(
@@ -499,7 +495,8 @@ class _SettingWidgetState extends State<SettingWidget>{
                               MaterialPageRoute(
                                 builder: (BuildContext context) => Provider(
                                   create: (context) => userData,
-                                  builder: (context, child) => const FriendWidget(),
+                                  builder: (context, child) =>
+                                      const FriendWidget(),
                                 ),
                               ),
                             );
@@ -529,9 +526,7 @@ class _SettingWidgetState extends State<SettingWidget>{
                             color: Color(0xFF090347),
                             size: 35,
                           ),
-                          onPressed: () async {
-                            
-                          },
+                          onPressed: () async {},
                         ),
                       ],
                     ),
