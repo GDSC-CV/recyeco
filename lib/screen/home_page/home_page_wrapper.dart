@@ -15,7 +15,7 @@ class Home_page_wrapper extends StatelessWidget {
       value: DatabaseService(uid: user!.uid).userData,
       initialData: UserData(level: 1,name: "Bob",uid: "PP",experiences: 10,friends: List.empty(),friendRequests: List.empty()),
       builder: (context, child){
-        return const MyHomePage(title: "Recycle");
+        return const CameraWidget();
       }
       
     );

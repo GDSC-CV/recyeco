@@ -1,114 +1,94 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:recycle_app/screen/loading.dart';
+import 'package:provider/provider.dart';
+import 'package:recycle_app/models/myuser.dart';
+import 'package:recycle_app/service/database.dart';
 import 'package:recycle_app/tools/constants.dart';
-import 'package:recycle_app/service/auth.dart';
 
-class Register extends StatefulWidget {
-  
-  final Function toggle;
-  Register({required this.toggle});
+class Setting_page extends StatefulWidget {
+  const Setting_page({super.key});
 
   @override
-  State<Register> createState() => _RegisterState();
+  State<Setting_page> createState() => _Setting_pageState();
 }
 
-class _RegisterState extends State<Register> {
+class _Setting_pageState extends State<Setting_page> {
 
-  final AuthService _auth = AuthService();
-  final _formkey = GlobalKey<FormState>();
-  bool loading = false;
-
-  String email = '';
-  String password = '';
-  String error = '';
-
+  final _formKey = GlobalKey<FormState>();
+  String _currentName = "";
 
   @override
   Widget build(BuildContext context) {
-    return loading?Loading() : Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.grey[600],
-      appBar: AppBar(
-        backgroundColor: Colors.grey[800],
-        title: Text('Register'),
-        elevation: 0,
-        actions: [
-          TextButton.icon(
-            icon: Icon(
-              Icons.person,
-              color: Colors.white,
-            ),
-            label: Text(
-              'log in',
+    
+    //User user = Provider.of<User>(context);
+    UserData userData = Provider.of<UserData>(context);
+    
+    return Scaffold(
+      appBar: AppBar(),
+      backgroundColor: Colors.grey[300],
+      body: Form(
+        key: _formKey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'Update your Info.',
+              
               style: TextStyle(
-                color: Colors.white,
+                fontSize: 18.0,
+                
               ),
             ),
-            onPressed: () {
-              widget.toggle();
-            },
-          )
-        ],
-      ),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 50,horizontal: 50),
-        child: Form(
-          key: _formkey,
-          child: Column(
-            children: [
-              SizedBox(height: 20,),
-              TextFormField(
-                decoration: inputTextDecoration.copyWith(hintText: 'Email'),
-                validator: (value) => value!.isEmpty ? 'Enter an email':null,
-                onChanged: ((value) {
-                  email = value;
-                }),
+            const SizedBox(height: 20.0),
+            const Text(
+              'Name',
+              
+            ),
+            const SizedBox(height: 20.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 10),
+              child: TextFormField(
+                initialValue: userData.name,
+                decoration: inputTextDecoration,
+                validator: (val) => val!.isEmpty ? 'Please enter a name' : null,
+                onChanged: (val) => setState(() => _currentName = val),
               ),
-              SizedBox(height: 20,),
-              TextFormField(
-                decoration: inputTextDecoration.copyWith(hintText: 'Password'),
-                obscureText: true,
-                validator: (value) => value!.length<6 ? 'Enter more than 6 chars':null,
-                onChanged: ((value) {
-                  password=value;
-                }),
+            ),
+            const SizedBox(height: 10.0),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.grey[50],
               ),
-              SizedBox(height: 20,),
-              ElevatedButton(
-                onPressed: () async{
-                  setState(() {
-                    loading = true;
-                  });
-                  if(_formkey.currentState!.validate()){
-                    dynamic result = await _auth.registerwithEmailandPassword(email, password);
-                    if(result==null){
-                      setState(() {
-                        loading = false;
-                        error = 'please enter a valid email';
-                      });
-                    }
+              child: const Text(
+                'confirm'
+              ),
+              onPressed: () async {
+                if(_formKey.currentState!.validate()){
+                  if(_currentName.isNotEmpty){
+                    await DatabaseService(uid: userData.uid).updateUserDataInfo(
+                      _currentName,
+                      userData.level,
+                      userData.experiences,
+                    );
                   }
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amber,
-                  foregroundColor: Colors.grey[50],
-                ),
-                child: Text(
-                  'register'
-                ),
+                  
+                  Navigator.pop(context);
+                }
+              }
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.grey[50],
               ),
-              SizedBox(height: 20),
-              Text(
-                error,
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 14
-                ),
-              )
-            ],
-          ),
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              child: const Text(
+                'cancel'
+              ),
+            )
+          ],
         ),
       ),
     );
