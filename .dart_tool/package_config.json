@@ -224,6 +224,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_slidable",
+      "rootUri": "file:///C:/Users/ZseRg/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_slidable-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_spinkit",
       "rootUri": "file:///C:/Users/ZseRg/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_spinkit-5.1.0",
       "packageUri": "lib/",
@@ -602,7 +608,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-03-31T08:11:06.406437Z",
+  "generated": "2023-03-31T09:05:07.387988Z",
   "generator": "pub",
   "generatorVersion": "2.19.0"
 }

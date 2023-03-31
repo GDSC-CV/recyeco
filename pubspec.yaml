@@ -57,6 +57,7 @@ dependencies:
   google_fonts: ^4.0.3
   flutter_animate: ^4.1.1+1
   simple_gradient_text: ^1.2.4
+  flutter_slidable: ^2.0.0
   #flutter_webview_plugin: ^0.4.0
 
 

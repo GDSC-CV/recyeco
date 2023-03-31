@@ -4,7 +4,10 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:recycle_app/models/myuser.dart';
+import 'package:recycle_app/screen/home_page/friend_page.dart';
 import 'package:recycle_app/service/auth.dart';
+import 'package:recycle_app/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 
@@ -22,6 +25,8 @@ class _SettingWidgetState extends State<SettingWidget>{
 
   @override
   Widget build(BuildContext context) {
+    UserData userData = Provider.of<UserData>(context);
+
     return Scaffold(
       
       backgroundColor: Colors.white,
@@ -455,7 +460,15 @@ class _SettingWidgetState extends State<SettingWidget>{
                             size: 35,
                           ),
                           onPressed: () async {
-                            
+                            await FriendSystem.updateFriend(userData);
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => Provider(
+                                  create: (context) => userData,
+                                  builder: (context, child) => const FriendWidget(),
+                                ),
+                              ),
+                            );
                           },
                         ),
                         IconButton(
