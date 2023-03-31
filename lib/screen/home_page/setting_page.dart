@@ -163,7 +163,6 @@ class _SettingWidgetState extends State<SettingWidget> {
                                     ),
                                     
                                   );
-                                  await Future.delayed(const Duration(seconds: 10));
                                       
                                   if(message==true){
                   

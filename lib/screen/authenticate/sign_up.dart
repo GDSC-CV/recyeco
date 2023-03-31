@@ -285,7 +285,7 @@ final AuthService _auth = AuthService();
                               widget.toggle();
                             },
                             child: Text(
-                              'sigh in',
+                              'sign in',
                               style: GoogleFonts.getFont(
                                 'Playfair Display',
                                 color: Color(0xFF090347),
