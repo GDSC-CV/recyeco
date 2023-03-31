@@ -9,6 +9,7 @@ import 'package:recycle_app/models/myuser.dart';
 import 'package:recycle_app/screen/authenticate/forget_password.dart';
 import 'package:recycle_app/screen/home_page/change_name.dart';
 import 'package:recycle_app/screen/home_page/friend_page.dart';
+import 'package:recycle_app/screen/home_page/levelWidget.dart';
 import 'package:recycle_app/service/auth.dart';
 import 'package:recycle_app/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -75,6 +76,16 @@ class _SettingWidgetState extends State<SettingWidget> {
                                 colors: [Color(0xFF663BEE), Color(0xFF5533C1)],
                                 gradientDirection: GradientDirection.ltr,
                                 gradientType: GradientType.linear,
+                              ).animate(
+                                effects: [
+                                  MoveEffect(
+                                    curve: Curves.easeInOut,
+                                    delay: 0.ms,
+                                    duration: 600.ms,
+                                    begin: Offset(-100, 0),
+                                    end: Offset(0, 0),
+                                  ),
+                                ]
                               ),
                             ),
                           ),
@@ -252,6 +263,15 @@ class _SettingWidgetState extends State<SettingWidget> {
                                     size: 40,
                                   ),
                                   onPressed: () async {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) => Provider(
+                                          create: (context) => userData,
+                                          builder: (context, child) =>
+                                              const LevelWidget(),
+                                        ),
+                                      ),
+                                    );
                                     print("press Level");
                                   }),
                             ),
@@ -420,6 +440,16 @@ class _SettingWidgetState extends State<SettingWidget> {
                       ),
                     ),
                   ],
+                ).animate(
+                  effects: [
+                    MoveEffect(
+                      curve: Curves.easeInOut,
+                      delay: 0.ms,
+                      duration: 600.ms,
+                      begin: Offset(0, 100),
+                      end: Offset(0, 0),
+                    ),
+                  ]
                 ),
               ),
               Container(
@@ -552,6 +582,16 @@ class _SettingWidgetState extends State<SettingWidget> {
                 ),
               ),
             ],
+          ).animate(
+            effects: [
+              FadeEffect(
+                curve: Curves.easeInOut,
+                delay: 0.ms,
+                duration: 600.ms,
+                begin: 0,
+                end: 1,
+              ),
+            ]
           ),
         ),
       ),

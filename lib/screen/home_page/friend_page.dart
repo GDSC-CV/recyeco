@@ -10,6 +10,7 @@ import 'package:recycle_app/screen/home_page/setting_page.dart';
 import 'package:recycle_app/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:recycle_app/screen/home_page/articles_links.dart';
+import 'package:flutter/animation.dart';
 
 class FriendWidget extends StatefulWidget {
   const FriendWidget({Key? key}) : super(key: key);
@@ -70,6 +71,16 @@ class _FriendWidgetState extends State<FriendWidget> {
                                 colors: [Color(0xFF6420AB), Color(0xFF3CDAC7)],
                                 gradientDirection: GradientDirection.ltr,
                                 gradientType: GradientType.linear,
+                              ).animate(
+                                effects: [
+                                  MoveEffect(
+                                    curve: Curves.easeInOut,
+                                    delay: 0.ms,
+                                    duration: 600.ms,
+                                    begin: Offset(-100, 0),
+                                    end: Offset(0, 0),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -266,7 +277,17 @@ class _FriendWidgetState extends State<FriendWidget> {
                           ),
                         ),
                       );
-                    }),
+                    }).animate(
+                  effects: [
+                    MoveEffect(
+                      curve: Curves.easeInOut,
+                      delay: 0.ms,
+                      duration: 600.ms,
+                      begin: Offset(0, 100),
+                      end: Offset(0, 0),
+                    ),
+                  ],
+                ),
               ),
               Divider(
                 thickness: 2,
@@ -364,7 +385,17 @@ class _FriendWidgetState extends State<FriendWidget> {
                           ),
                         ),
                       );
-                    }),
+                    }).animate(
+                  effects: [
+                    MoveEffect(
+                      curve: Curves.easeInOut,
+                      delay: 0.ms,
+                      duration: 600.ms,
+                      begin: Offset(0, 100),
+                      end: Offset(0, 0),
+                    ),
+                  ],
+                ),
               ),
               Container(
                 width: double.infinity,
@@ -493,6 +524,16 @@ class _FriendWidgetState extends State<FriendWidget> {
                     ),
                   ],
                 ),
+              ),
+            ],
+          ).animate(
+            effects: [
+              FadeEffect(
+                curve: Curves.easeInOut,
+                delay: 0.ms,
+                duration: 600.ms,
+                begin: 0,
+                end: 1,
               ),
             ],
           ),

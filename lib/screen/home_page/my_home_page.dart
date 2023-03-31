@@ -80,6 +80,16 @@ class _CameraWidgetState extends State<CameraWidget> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
                               ),
+                            ).animate(
+                              effects: [
+                                MoveEffect(
+                                  curve: Curves.easeInOut,
+                                  delay: 0.ms,
+                                  duration: 600.ms,
+                                  begin: Offset(-100, 0),
+                                  end: Offset(0, 0),
+                                ),
+                              ]
                             ),
                           ),
                           Expanded(
@@ -99,6 +109,16 @@ class _CameraWidgetState extends State<CameraWidget> {
                                 colors: [Color(0xFF4A38F2), Color(0xFF3CDAC7)],
                                 gradientDirection: GradientDirection.ltr,
                                 gradientType: GradientType.linear,
+                              ).animate(
+                                effects: [
+                                  MoveEffect(
+                                    curve: Curves.easeInOut,
+                                    delay: 0.ms,
+                                    duration: 600.ms,
+                                    begin: Offset(-100, 0),
+                                    end: Offset(0, 0),
+                                  ),
+                                ]
                               ),
                             ),
                           ),
@@ -112,7 +132,17 @@ class _CameraWidgetState extends State<CameraWidget> {
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.fitHeight,
-                              ),
+                              ).animate(
+                                effects: [
+                                  RotateEffect(
+                                    curve: Curves.easeInOut,
+                                    delay: 0.ms,
+                                    duration: 600.ms,
+                                    begin: 0.5,
+                                    end: 1,
+                                  ),
+                                ]
+                              )
                             ),
                           ),
                         ],
@@ -180,6 +210,11 @@ class _CameraWidgetState extends State<CameraWidget> {
                             size: 60,
                           ),
                         ),
+                      ).animate(
+                      onPlay: (controller) => controller.repeat(),
+                      ).shimmer(
+                        duration: Duration(milliseconds: 500),
+                        delay: Duration(seconds: 3),
                       ),
                     ),
                   ),
@@ -207,6 +242,16 @@ class _CameraWidgetState extends State<CameraWidget> {
                     ),
                   ),
                 ],
+              ).animate(
+                effects: [
+                  MoveEffect(
+                    curve: Curves.easeInOut,
+                    delay: 0.ms,
+                    duration: 600.ms,
+                    begin: Offset(100, 0),
+                    end: Offset(0, 0),
+                  ),
+                ]
               ),
               Row(
                 mainAxisSize: MainAxisSize.max,
@@ -285,10 +330,25 @@ class _CameraWidgetState extends State<CameraWidget> {
                             size: 60,
                           ),
                         ),
+                      ).animate(
+                      onPlay: (controller) => controller.repeat(),
+                      ).shimmer(
+                        duration: Duration(milliseconds: 500),
+                        delay: Duration(seconds: 3),
                       ),
                     ),
                   ),
                 ],
+              ).animate(
+                effects: [
+                  MoveEffect(
+                    curve: Curves.easeInOut,
+                    delay: 0.ms,
+                    duration: 600.ms,
+                    begin: Offset(-100, 0),
+                    end: Offset(0, 0),
+                  ),
+                ]
               ),
               Container(
                 width: double.infinity,
@@ -428,6 +488,16 @@ class _CameraWidgetState extends State<CameraWidget> {
                 ),
               ),
             ],
+          ).animate(
+            effects: [
+              FadeEffect(
+                curve: Curves.easeInOut,
+                delay: 0.ms,
+                duration: 600.ms,
+                begin: 0,
+                end: 1,
+              ),
+            ]
           ),
         ),
       ),
