@@ -27,7 +27,7 @@ class _ChangeName_pageState extends State<ChangeName_page> {
         leading: BackButton(
           onPressed: ()async{
             
-            Navigator.pop(context,true);
+            Navigator.pop(context,"");
           },
         ),
       ),
@@ -77,9 +77,10 @@ class _ChangeName_pageState extends State<ChangeName_page> {
                       userData.level,
                       userData.experiences,
                     );
+                    
+                    Navigator.pop(context,_currentName);
                   }
                   
-                  Navigator.pop(context,true);
                 }
               }
             ),
@@ -89,7 +90,7 @@ class _ChangeName_pageState extends State<ChangeName_page> {
                 foregroundColor: Colors.grey[50],
               ),
               onPressed: (){
-                Navigator.pop(context,true);
+                Navigator.pop(context,"");
               },
               child: const Text(
                 'cancel'

@@ -22,12 +22,17 @@ class SettingWidget extends StatefulWidget {
 
 class _SettingWidgetState extends State<SettingWidget> {
   final AuthService _auth = AuthService();
-  
+  bool Reread = true;
+  String userName ="";
+  String userLevel ="";
   @override
   Widget build(BuildContext context) {
     UserData userData = Provider.of<UserData>(context,listen: true);
-    String userName = userData.name;
-    String userLevel = userData.level.toString();
+    
+    if(Reread){
+      userName = userData.name;
+      userLevel = userData.level.toString();
+    }
     //print(userName);
     return Scaffold(
       backgroundColor: Colors.white,
@@ -154,7 +159,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                                 ),
                                 onPressed: () async {
                                   print("press UserName");
-                                  bool message = await Navigator.of(context).push(
+                                  String message = await Navigator.of(context).push(
                                     MaterialPageRoute(
                                       builder: (BuildContext context) => Provider(
                                         create: (context) => userData,
@@ -164,10 +169,12 @@ class _SettingWidgetState extends State<SettingWidget> {
                                     
                                   );
                                       
-                                  if(message==true){
+                                  if(message.isNotEmpty){
                   
                                     setState((){
-                                      print("rebuild");
+                                      userName = message;
+                                      Reread = false;
+                                      print(userName);
                                       //await FriendSystem.updateFriend(userData);
                                     });
                                   }
