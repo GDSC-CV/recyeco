@@ -79,7 +79,7 @@ class _CameraWidgetState extends State<CameraWidget> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
                               ),
-                            ),
+                            ).animate().fadeIn(duration: Duration(milliseconds: 500)).slideY(),
                           ),
                           Expanded(
                             child: Container(
@@ -98,7 +98,7 @@ class _CameraWidgetState extends State<CameraWidget> {
                                 colors: [Color(0xFF4A38F2), Color(0xFF3CDAC7)],
                                 gradientDirection: GradientDirection.ltr,
                                 gradientType: GradientType.linear,
-                              ),
+                              ).animate().fadeIn(duration: Duration(milliseconds: 500)).slideY(),
                             ),
                           ),
                           Expanded(
@@ -111,7 +111,7 @@ class _CameraWidgetState extends State<CameraWidget> {
                                 width: 100,
                                 height: 100,
                                 fit: BoxFit.fitHeight,
-                              ),
+                              ).animate().scale(duration: Duration(milliseconds: 500)).rotate(duration: Duration(milliseconds: 500)),
                             ),
                           ),
                         ],
@@ -206,7 +206,7 @@ class _CameraWidgetState extends State<CameraWidget> {
                     ),
                   ),
                 ],
-              ),
+              ).animate().shimmer(),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -288,7 +288,7 @@ class _CameraWidgetState extends State<CameraWidget> {
                     ),
                   ),
                 ],
-              ),
+              ).animate().shimmer(),
               Container(
                 width: double.infinity,
                 height: 90,
