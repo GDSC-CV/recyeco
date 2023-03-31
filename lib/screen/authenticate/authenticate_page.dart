@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recycle_app/screen/authenticate/register.dart';
+import 'package:recycle_app/screen/authenticate/sign_up.dart';
 import 'package:recycle_app/screen/authenticate/sign_in.dart';
 
 class Authenticate extends StatefulWidget {
@@ -23,7 +23,7 @@ class _AuthenticateState extends State<Authenticate> {
     if (showSignIn) {
       return SignIn(toggle: toggleShow);
     } else {
-      return Register(toggle: toggleShow);
+      return SignupWidget(toggle: toggleShow);
     }
   }
 }

@@ -70,7 +70,7 @@ class _SignInState extends State<SignIn> {
                                           'Playfair Display',
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 40,
+                                          fontSize: 60,
                                         ),
                                         colors: [
                                           Color(0xFF4A38F2),
