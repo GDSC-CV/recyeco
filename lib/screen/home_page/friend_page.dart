@@ -9,6 +9,7 @@ import 'package:recycle_app/screen/home_page/friend_add_page.dart';
 import 'package:recycle_app/screen/home_page/setting_page.dart';
 import 'package:recycle_app/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:recycle_app/screen/home_page/articles_links.dart';
 
 class FriendWidget extends StatefulWidget {
   const FriendWidget({Key? key}) : super(key: key);
@@ -455,6 +456,14 @@ class _FriendWidgetState extends State<FriendWidget> {
                             size: 35,
                           ),
                           onPressed: () async {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => Provider(
+                                  create: (context) => userData,
+                                  builder: (context, child) => Articals_links(),
+                                ),
+                              ),
+                            ); // context.pushNamed('Article');
                             // context.pushNamed('Article');
                           },
                         ),

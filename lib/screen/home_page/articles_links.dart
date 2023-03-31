@@ -78,82 +78,100 @@ class Articals_links extends StatelessWidget {
               ],
             ),
             Expanded(
-                child: ListView(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                  child: InkWell(
-                    onTap: () async {
-                      //context.pushNamed('ArticleCopy');
-                    },
-                    child: Container(
-                      width: 100,
-                      height: 114.2,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Color(0x783CDAC7), Color(0x724A38F2)],
-                          stops: [0, 1],
-                          begin: AlignmentDirectional(1, -0.64),
-                          end: AlignmentDirectional(-1, 0.64),
-                        ),
-                        borderRadius: BorderRadius.circular(30),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Expanded(
-                            child: Column(
+              child: StreamBuilder<QuerySnapshot>(
+                stream: _firestore.collection('links').snapshots(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasError) {
+                    return Center(child: Text('Error: ${snapshot.error}'));
+                  }
+
+                  if (!snapshot.hasData) {
+                    return Center(child: CircularProgressIndicator());
+                  }
+
+                  final docs = snapshot.data!.docs;
+
+                  return ListView.builder(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemCount: docs.length,
+                    itemBuilder: (context, index) {
+                      final doc = docs[index];
+                      final data = doc.data() as Map<String, dynamic>;
+                      final title = data['title'] as String;
+                      final url = data['url'] as String;
+
+                      return // Generated code for this Container Widget...
+                          Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                        child: InkWell(
+                          onTap: () async {
+                            await Experience.userGainExp(
+                                userData, 10); // Using userData from Provider
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => WebView(
+                                  initialUrl: url,
+                                  javascriptMode: JavascriptMode.unrestricted,
+                                ),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 100,
+                            height: 83.1,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [Color(0x783CDAC7), Color(0x724A38F2)],
+                                stops: [0, 1],
+                                begin: AlignmentDirectional(1, -0.64),
+                                end: AlignmentDirectional(-1, 0.64),
+                              ),
+                              borderRadius: BorderRadius.circular(30),
+                              shape: BoxShape.rectangle,
+                            ),
+                            child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 10, 0, 0),
-                                  child: Text(
-                                    'TitleTitleTitleTitle',
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.getFont(
-                                      'Playfair Display',
-                                      color: Color(0xFF12087C),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                                Divider(
-                                  thickness: 2,
-                                  color: Colors.white,
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 0, 0),
-                                  child: Text(
-                                    'ajsktjaroihjqreqakjfaoiv\najdsfklajgklqaerekgjrsakgqioarjhqker',
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.getFont(
-                                      'Playfair Display',
-                                      color: Color(0xFF090347),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16,
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20),
+                                    child: Align(
+                                      alignment: AlignmentDirectional(0, 0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            title,
+                                            textAlign: TextAlign.start,
+                                            style: GoogleFonts.getFont(
+                                              'Playfair Display',
+                                              color: Color(0xFF12087C),
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            )),
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
             Container(
               width: double.infinity,
               height: 90,

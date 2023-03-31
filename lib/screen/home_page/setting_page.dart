@@ -12,6 +12,7 @@ import 'package:recycle_app/screen/home_page/friend_page.dart';
 import 'package:recycle_app/service/auth.dart';
 import 'package:recycle_app/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:recycle_app/screen/home_page/articles_links.dart';
 
 class SettingWidget extends StatefulWidget {
   const SettingWidget({Key? key}) : super(key: key);
@@ -23,13 +24,13 @@ class SettingWidget extends StatefulWidget {
 class _SettingWidgetState extends State<SettingWidget> {
   final AuthService _auth = AuthService();
   bool Reread = true;
-  String userName ="";
-  String userLevel ="";
+  String userName = "";
+  String userLevel = "";
   @override
   Widget build(BuildContext context) {
-    UserData userData = Provider.of<UserData>(context,listen: true);
-    
-    if(Reread){
+    UserData userData = Provider.of<UserData>(context, listen: true);
+
+    if (Reread) {
       userName = userData.name;
       userLevel = userData.level.toString();
     }
@@ -159,19 +160,20 @@ class _SettingWidgetState extends State<SettingWidget> {
                                 ),
                                 onPressed: () async {
                                   print("press UserName");
-                                  String message = await Navigator.of(context).push(
+                                  String message =
+                                      await Navigator.of(context).push(
                                     MaterialPageRoute(
-                                      builder: (BuildContext context) => Provider(
+                                      builder: (BuildContext context) =>
+                                          Provider(
                                         create: (context) => userData,
-                                        builder: (context, child) => const ChangeName_page(),
+                                        builder: (context, child) =>
+                                            const ChangeName_page(),
                                       ),
                                     ),
-                                    
                                   );
-                                      
-                                  if(message.isNotEmpty){
-                  
-                                    setState((){
+
+                                  if (message.isNotEmpty) {
+                                    setState(() {
                                       userName = message;
                                       Reread = false;
                                       print(userName);
@@ -223,7 +225,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Level '+userLevel,
+                                    'Level ' + userLevel,
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.getFont(
                                       'Playfair Display',
@@ -320,17 +322,20 @@ class _SettingWidgetState extends State<SettingWidget> {
                                   size: 40,
                                 ),
                                 onPressed: () async {
-                                  if (!(FirebaseAuth.instance.currentUser!.isAnonymous)) {
+                                  if (!(FirebaseAuth
+                                      .instance.currentUser!.isAnonymous)) {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => const ForgetPassword()));
+                                            builder: (context) =>
+                                                const ForgetPassword()));
                                   } else {
                                     showDialog(
                                         context: context,
                                         builder: (context) {
                                           return AlertDialog(
-                                            content: Text("Your are currently Anonymous!"),
+                                            content: Text(
+                                                "Your are currently Anonymous!"),
                                           );
                                         });
                                   }
@@ -519,7 +524,14 @@ class _SettingWidgetState extends State<SettingWidget> {
                             size: 35,
                           ),
                           onPressed: () async {
-                            // context.pushNamed('Article');
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => Provider(
+                                  create: (context) => userData,
+                                  builder: (context, child) => Articals_links(),
+                                ),
+                              ),
+                            ); // context.pushNamed('Article');
                           },
                         ),
                         IconButton(
