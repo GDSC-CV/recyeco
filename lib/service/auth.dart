@@ -20,7 +20,7 @@ class AuthService{
       UserCredential result = await _auth.signInAnonymously();
       User? user = result.user;
       //print(user);
-      await DatabaseService(uid: user!.uid).initialUserData("Bob", 1,10, List.empty(), List.empty());
+      await DatabaseService(uid: user!.uid).initialUserData("Bob", 1,10, List.empty(), List.empty(), List.empty(), List.empty(), List.empty(), List.empty());
       return _myuserFromFirebaseUser(user);
     }catch(e){
       //print(e.toString());
@@ -33,7 +33,7 @@ class AuthService{
       UserCredential result = await _auth.createUserWithEmailAndPassword(email: email.trim(), password: password.trim());
       User? user = result.user;
       //print(user!.uid);
-      await DatabaseService(uid: user!.uid).initialUserData("Bob", 1,10, List.empty(), List.empty());
+      await DatabaseService(uid: user!.uid).initialUserData("Bob", 1,10, List.empty(), List.empty(), List.empty(), List.empty(), List.empty(), List.empty());
       return _myuserFromFirebaseUser(user);
     }catch(e){
       //print(e.toString());
