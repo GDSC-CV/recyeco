@@ -8,6 +8,7 @@ import 'package:recycle_app/models/myuser.dart';
 import 'package:recycle_app/screen/home_page/friend_page.dart';
 import 'package:recycle_app/screen/home_page/setting_page.dart';
 import 'package:recycle_app/service/auth.dart';
+import 'package:recycle_app/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import 'package:image/image.dart' as img;
@@ -365,12 +366,13 @@ class _CameraWidgetState extends State<CameraWidget> {
                             size: 35,
                           ),
                           onPressed: () async {
+                            await FriendSystem.updateFriend(userData);
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (BuildContext context) => Provider(
                                   create: (context) => userData,
                                   builder: (context, child) =>
-                                      const FriendPage(),
+                                      const FriendWidget(),
                                 ),
                               ),
                             );
