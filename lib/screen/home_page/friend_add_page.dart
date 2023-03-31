@@ -218,6 +218,13 @@ class _FriendAddWidgetState extends State<FriendAddWidget>{
                               });
                             }else{
                               await FriendSystem.addFriend(userData, _friendId);
+                              showDialog(
+                                context: context,
+                                builder: (context){
+                                  return AlertDialog(
+                                    content: Text("Success!"),
+                                  );
+                              });
                             }
                           },
                           child: Container(

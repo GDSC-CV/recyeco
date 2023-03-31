@@ -301,7 +301,7 @@ class _SignInState extends State<SignIn> {
                                       widget.toggle();
                                     },
                                     child: Text(
-                                      'sigh up',
+                                      'sign up',
                                       style: GoogleFonts.getFont(
                                         'Playfair Display',
                                         color: Color(0xFF090347),
