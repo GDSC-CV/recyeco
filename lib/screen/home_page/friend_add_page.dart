@@ -205,7 +205,7 @@ class _FriendAddWidgetState extends State<FriendAddWidget>{
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                         child: InkWell(
                           onTap: () async {
                             if(userData.friendIDs.contains(_friendId)){
@@ -237,8 +237,8 @@ class _FriendAddWidgetState extends State<FriendAddWidget>{
                                   Color(0xFF3CDAC7)
                                 ],
                                 stops: [0, 1],
-                                begin: AlignmentDirectional(0, -1),
-                                end: AlignmentDirectional(0, 1),
+                                begin: AlignmentDirectional(-1, -1),
+                                end: AlignmentDirectional(1, 1),
                               ),
                               borderRadius: BorderRadius.circular(60),
                               shape: BoxShape.rectangle,
