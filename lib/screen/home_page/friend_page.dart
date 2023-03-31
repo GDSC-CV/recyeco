@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +10,6 @@ import 'package:recycle_app/screen/home_page/setting_page.dart';
 import 'package:recycle_app/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-
 class FriendWidget extends StatefulWidget {
   const FriendWidget({Key? key}) : super(key: key);
 
@@ -20,22 +17,19 @@ class FriendWidget extends StatefulWidget {
   _FriendWidgetState createState() => _FriendWidgetState();
 }
 
-class _FriendWidgetState extends State<FriendWidget>{
-  
+class _FriendWidgetState extends State<FriendWidget> {
   @override
   Widget build(BuildContext context) {
     UserData userData = Provider.of<UserData>(context);
-    var currentUserFriendIDList = userData.friendIDs ;
+    var currentUserFriendIDList = userData.friendIDs;
     var currentUserFriendNameList = userData.friendNames;
     var currentUserFriendLevelList = userData.friendLevels;
 
-    
-    var currentUserFriendRequestIDList = userData.friendIDRequests ;
+    var currentUserFriendRequestIDList = userData.friendIDRequests;
     var currentUserFriendRequestNameList = userData.friendNameRequests;
     var currentUserFriendRequestLevelList = userData.friendLevelRequests;
 
     return Scaffold(
-      
       backgroundColor: Colors.white,
       body: SafeArea(
         child: GestureDetector(
@@ -61,9 +55,7 @@ class _FriendWidgetState extends State<FriendWidget>{
                             child: Container(
                               width: 328.1,
                               height: 100,
-                              decoration: BoxDecoration(
-                                color: Colors.white
-                              ),
+                              decoration: BoxDecoration(color: Colors.white),
                               alignment: AlignmentDirectional(0, -1),
                               child: GradientText(
                                 'Friends',
@@ -111,14 +103,14 @@ class _FriendWidgetState extends State<FriendWidget>{
                             MaterialPageRoute(
                               builder: (BuildContext context) => Provider(
                                 create: (context) => userData,
-                                builder: (context, child) => const FriendAddWidget(),
+                                builder: (context, child) =>
+                                    const FriendAddWidget(),
                               ),
                             ),
                           );
-                          
-                          if(message==true){
-                            
-                            setState((){
+
+                          if (message == true) {
+                            setState(() {
                               //await FriendSystem.updateFriend(userData);
                             });
                           }
@@ -141,129 +133,139 @@ class _FriendWidgetState extends State<FriendWidget>{
               ),
               Expanded(
                 child: ListView.builder(
-                  padding: EdgeInsets.zero,
-                  itemCount: currentUserFriendRequestIDList.length,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (BuildContext context, int index){
-                    return Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                      child: Container(
-                        width: 100,
-                        height: 67.8,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [ Color(0xFF6420AB),Color.fromARGB(255, 152, 127, 235)],
-                            stops: [0, 1],
-                            begin: AlignmentDirectional(-1, 0),
-                            end: AlignmentDirectional(1, 0),
+                    padding: EdgeInsets.zero,
+                    itemCount: currentUserFriendRequestIDList.length,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                        child: Container(
+                          width: 100,
+                          height: 67.8,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color(0xFF6420AB),
+                                Color.fromARGB(255, 152, 127, 235)
+                              ],
+                              stops: [0, 1],
+                              begin: AlignmentDirectional(-1, 0),
+                              end: AlignmentDirectional(1, 0),
+                            ),
+                            borderRadius: BorderRadius.circular(60),
+                            shape: BoxShape.rectangle,
                           ),
-                          borderRadius: BorderRadius.circular(60),
-                          shape: BoxShape.rectangle,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
-                              child: Icon(
-                                Icons.face_retouching_natural,
-                                color: Colors.white,
-                                size: 46,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    15, 0, 15, 0),
+                                child: Icon(
+                                  Icons.face_retouching_natural,
+                                  color: Colors.white,
+                                  size: 46,
+                                ),
                               ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    currentUserFriendRequestNameList[index],
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.getFont(
-                                      'Playfair Display',
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 22,
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      currentUserFriendRequestNameList[index],
+                                      textAlign: TextAlign.start,
+                                      style: GoogleFonts.getFont(
+                                        'Playfair Display',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 22,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    'invite',
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.getFont(
-                                      'Playfair Display',
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16,
+                                    Text(
+                                      'invite',
+                                      textAlign: TextAlign.start,
+                                      style: GoogleFonts.getFont(
+                                        'Playfair Display',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 10, 10),
-                              child: InkWell(
-                                onTap: () {
-                                  FriendSystem.acceptFriend(userData,currentUserFriendRequestIDList[index],currentUserFriendRequestNameList[index],currentUserFriendRequestLevelList[index]);
-                                  FriendSystem.DeleteFriendRequest(userData,currentUserFriendRequestIDList[index],currentUserFriendRequestNameList[index],currentUserFriendRequestLevelList[index]);
-                                  setState(() {
-                                    
-                                  });
-                                },
-                                child: Container(
-                                  //alignment: AlignmentDirectional(0, 0),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(60),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  child:const Icon(
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0, 10, 10, 10),
+                                child: InkWell(
+                                  onTap: () {
+                                    FriendSystem.acceptFriend(
+                                        userData,
+                                        currentUserFriendRequestIDList[index],
+                                        currentUserFriendRequestNameList[index],
+                                        currentUserFriendRequestLevelList[
+                                            index]);
+                                    FriendSystem.DeleteFriendRequest(
+                                        userData,
+                                        currentUserFriendRequestIDList[index],
+                                        currentUserFriendRequestNameList[index],
+                                        currentUserFriendRequestLevelList[
+                                            index]);
+                                    setState(() {});
+                                  },
+                                  child: Container(
+                                    //alignment: AlignmentDirectional(0, 0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(60),
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: const Icon(
                                       Icons.check_circle,
                                       color: Color.fromARGB(255, 134, 109, 219),
                                       size: 40,
                                     ),
-                                    
+                                  ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                              child: InkWell(
-                                onTap: () {
-                                  FriendSystem.DeleteFriendRequest(userData,currentUserFriendRequestIDList[index],currentUserFriendRequestNameList[index],currentUserFriendRequestLevelList[index]);
-                                  setState(() {
-                                    
-                                  });
-                                },
-                                child: Container(
-                                  //alignment: AlignmentDirectional(0, 0),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(60),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  child:const Icon(
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+                                child: InkWell(
+                                  onTap: () {
+                                    FriendSystem.DeleteFriendRequest(
+                                        userData,
+                                        currentUserFriendRequestIDList[index],
+                                        currentUserFriendRequestNameList[index],
+                                        currentUserFriendRequestLevelList[
+                                            index]);
+                                    setState(() {});
+                                  },
+                                  child: Container(
+                                    //alignment: AlignmentDirectional(0, 0),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(60),
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: const Icon(
                                       Icons.cancel_rounded,
                                       color: Color.fromARGB(255, 134, 109, 219),
                                       size: 40,
                                     ),
-                                    
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  }
-                ),
-
+                      );
+                    }),
               ),
               Divider(
                 thickness: 2,
@@ -273,96 +275,95 @@ class _FriendWidgetState extends State<FriendWidget>{
               ),
               Expanded(
                 child: ListView.builder(
-                  padding: EdgeInsets.zero,
-                  itemCount: currentUserFriendIDList.length,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (BuildContext context, int index){
-                    return Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                      child: Container(
-                        width: 100,
-                        height: 67.8,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [Color(0xFF3CDAC7), Color(0xFF4A38F2)],
-                            stops: [0, 1],
-                            begin: AlignmentDirectional(1, -0.64),
-                            end: AlignmentDirectional(-1, 0.64),
+                    padding: EdgeInsets.zero,
+                    itemCount: currentUserFriendIDList.length,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                        child: Container(
+                          width: 100,
+                          height: 67.8,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Color(0xFF3CDAC7), Color(0xFF4A38F2)],
+                              stops: [0, 1],
+                              begin: AlignmentDirectional(1, -0.64),
+                              end: AlignmentDirectional(-1, 0.64),
+                            ),
+                            borderRadius: BorderRadius.circular(60),
+                            shape: BoxShape.rectangle,
                           ),
-                          borderRadius: BorderRadius.circular(60),
-                          shape: BoxShape.rectangle,
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
-                              child: Icon(
-                                Icons.face,
-                                color: Colors.white,
-                                size: 46,
-                              ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    currentUserFriendNameList[index],
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.getFont(
-                                      'Playfair Display',
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 22,
-                                    ),
-                                  ),
-                                  Text(
-                                    'Level '+currentUserFriendLevelList[index].toString(),
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.getFont(
-                                      'Playfair Display',
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
-                              child: IconButton(
-                                // borderColor: Color(0x00FFFFFF),
-                                // borderRadius: 30,
-                                // borderWidth: 1,
-                                // buttonSize: 55,
-                                // fillColor: Colors.white,
-                                icon: Icon(
-                                  Icons.send_rounded,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    15, 0, 15, 0),
+                                child: Icon(
+                                  Icons.face,
                                   color: Colors.white,
-                                  size: 30,
+                                  size: 46,
                                 ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
-                                },
                               ),
-                            ),
-                          ],
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      currentUserFriendNameList[index],
+                                      textAlign: TextAlign.start,
+                                      style: GoogleFonts.getFont(
+                                        'Playfair Display',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 22,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Level ' +
+                                          currentUserFriendLevelList[index]
+                                              .toString(),
+                                      textAlign: TextAlign.start,
+                                      style: GoogleFonts.getFont(
+                                        'Playfair Display',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                child: IconButton(
+                                  // borderColor: Color(0x00FFFFFF),
+                                  // borderRadius: 30,
+                                  // borderWidth: 1,
+                                  // buttonSize: 55,
+                                  // fillColor: Colors.white,
+                                  icon: Icon(
+                                    Icons.send_rounded,
+                                    color: Colors.white,
+                                    size: 30,
+                                  ),
+                                  onPressed: () {
+                                    print('IconButton pressed ...');
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-
-                  }
-                ),
-
+                      );
+                    }),
               ),
               Container(
                 width: double.infinity,
@@ -427,7 +428,8 @@ class _FriendWidgetState extends State<FriendWidget>{
                             size: 35,
                           ),
                           onPressed: () {
-                            Navigator.of(context).popUntil((route) => route.isFirst);
+                            Navigator.of(context)
+                                .popUntil((route) => route.isFirst);
                           },
                         ),
                         IconButton(
@@ -440,9 +442,7 @@ class _FriendWidgetState extends State<FriendWidget>{
                             color: Color(0xFF090347),
                             size: 35,
                           ),
-                          onPressed: () async {
-                            
-                          },
+                          onPressed: () async {},
                         ),
                         IconButton(
                           // borderColor: Colors.transparent,
@@ -473,7 +473,8 @@ class _FriendWidgetState extends State<FriendWidget>{
                               MaterialPageRoute(
                                 builder: (BuildContext context) => Provider(
                                   create: (context) => userData,
-                                  builder: (context, child) => const SettingWidget(),
+                                  builder: (context, child) =>
+                                      const SettingWidget(),
                                 ),
                               ),
                             );
