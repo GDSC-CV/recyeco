@@ -179,6 +179,11 @@ class _CameraWidgetState extends State<CameraWidget> {
                             size: 60,
                           ),
                         ),
+                      ).animate(
+                      onPlay: (controller) => controller.repeat(),
+                      ).shimmer(
+                        duration: Duration(milliseconds: 500),
+                        delay: Duration(seconds: 3),
                       ),
                     ),
                   ),
@@ -206,7 +211,7 @@ class _CameraWidgetState extends State<CameraWidget> {
                     ),
                   ),
                 ],
-              ).animate().shimmer(),
+              ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -284,11 +289,16 @@ class _CameraWidgetState extends State<CameraWidget> {
                             size: 60,
                           ),
                         ),
+                      ).animate(
+                      onPlay: (controller) => controller.repeat(),
+                      ).shimmer(
+                        duration: Duration(milliseconds: 500),
+                        delay: Duration(seconds: 3),
                       ),
                     ),
                   ),
                 ],
-              ).animate().shimmer(),
+              ),
               Container(
                 width: double.infinity,
                 height: 90,
