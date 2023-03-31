@@ -25,11 +25,12 @@ This app was built using the following technologies:
 
 - **Firebase:** Firebase Authentication and Cloud Firestore were used to handle user authentication and data storage.
 - **Flutter:** Flutter was used to build the mobile app interface.
+- **Kaggle:** Kaggle is a website where we collected recycling images for machine learning.
 - **OpenCV:** OpenCV was used for image processing and object recognition, to classify the recyclings from user photos.
 - **Deep Learning:** Deep learning models were used to train the image recognition algorithm for classifying the recyclings.
 - **Firebase Cloud Messaging:** Firebase Cloud Messaging was used to send push notifications to users who haven't logged in on that day.
 
-## Getting Strted
+## Getting Started
 
 To get started with **Recyeco**, follow these steps:
 
