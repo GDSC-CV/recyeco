@@ -1,6 +1,6 @@
 # Recyeco
 
-This is a recycling app that helps users quickly understand how to properly sort various types of recyclable materials.
+This is a recycling app that helps users quickly understand how to properly identify various types of recyclable materials.
 
 ## Table of Contents
 
@@ -28,7 +28,7 @@ This app was built using the following technologies:
 - **Kaggle:** Kaggle is a website where we collected recycling images for machine learning.
 - **OpenCV:** OpenCV was used for image processing and object recognition, to classify the recyclings from user photos.
 - **Deep Learning:** Deep learning models were used to train the image recognition algorithm for classifying the recyclings.
-- **Firebase Cloud Messaging:** Firebase Cloud Messaging was used to send push notifications to users who haven't logged in on that day.
+- **Firebase Cloud Messaging:** Firebase Cloud Messaging was used to send push notifications to users.
 
 ## Getting Started
 
