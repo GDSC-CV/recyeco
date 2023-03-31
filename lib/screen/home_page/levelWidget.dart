@@ -76,6 +76,16 @@ class _LevelWidgetState extends State<LevelWidget>{
                                   ],
                                   gradientDirection: GradientDirection.ltr,
                                   gradientType: GradientType.linear,
+                                ).animate(
+                                  effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeInOut,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(-100, 0),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]
                                 ),
                               ),
                             ),
@@ -167,6 +177,16 @@ class _LevelWidgetState extends State<LevelWidget>{
                     ),
                   ),
                 ],
+              ).animate(
+                effects: [
+                  MoveEffect(
+                    curve: Curves.easeInOut,
+                    delay: 0.ms,
+                    duration: 600.ms,
+                    begin: Offset(100, 0),
+                    end: Offset(0, 0),
+                  ),
+                ]
               ),
               Row(
                 mainAxisSize: MainAxisSize.max,
@@ -189,6 +209,16 @@ class _LevelWidgetState extends State<LevelWidget>{
                 ],
               ),
             ],
+          ).animate(
+            effects: [
+              FadeEffect(
+                curve: Curves.easeInOut,
+                delay: 0.ms,
+                duration: 600.ms,
+                begin: 0,
+                end: 1,
+              ),
+            ]
           ),
         ),
       ),
