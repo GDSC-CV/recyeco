@@ -63,7 +63,18 @@ class Articals_links extends StatelessWidget {
                                 colors: [Color(0xFF3CDAC7), Color(0xFF5533C1)],
                                 gradientDirection: GradientDirection.ltr,
                                 gradientType: GradientType.linear,
-                              )),
+                              ).animate(
+                                effects: [
+                                  MoveEffect(
+                                    curve: Curves.easeInOut,
+                                    delay: 0.ms,
+                                    duration: 600.ms,
+                                    begin: Offset(-100, 0),
+                                    end: Offset(0, 0),
+                                  ),
+                                ]
+                              )
+                            ),
                         ),
                         Divider(
                           thickness: 2,
@@ -168,6 +179,16 @@ class Articals_links extends StatelessWidget {
                         ),
                       );
                     },
+                  ).animate(
+                    effects: [
+                      MoveEffect(
+                        curve: Curves.easeInOut,
+                        delay: 0.ms,
+                        duration: 600.ms,
+                        begin: Offset(0, 100),
+                        end: Offset(0, 0),
+                      ),
+                    ]
                   );
                 },
               ),
@@ -304,7 +325,18 @@ class Articals_links extends StatelessWidget {
               ),
             ),
           ],
-        )),
+        ).animate(
+          effects: [
+            FadeEffect(
+              curve: Curves.easeInOut,
+              delay: 0.ms,
+              duration: 600.ms,
+              begin: 0,
+              end: 1,
+            ),
+          ]
+        )
+        ),
       ),
     );
   }
