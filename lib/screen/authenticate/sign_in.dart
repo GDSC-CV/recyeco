@@ -79,7 +79,8 @@ class _SignInState extends State<SignIn> {
                                         gradientDirection:
                                             GradientDirection.ltr,
                                         gradientType: GradientType.linear,
-                                      )),
+                                      ).animate().fade(duration: Duration(milliseconds: 500)).slideX(duration: Duration(milliseconds: 500))
+                                  ),
                                 ),
                               ),
                             ],
