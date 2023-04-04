@@ -7,7 +7,7 @@ This is a recycling app that helps users quickly understand how to properly iden
 ## Table of Contents
 
 - [Features](#features)
-- [Technologies Used](#technologies-used)
+- [Tech Used](#technologies-used)
 - [Getting Started](#getting-started)
 
 ## Features
