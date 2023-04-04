@@ -11,6 +11,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await setupNotification();
   runApp(const MyApp());
@@ -21,21 +22,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return StreamProvider<MyUser?>.value(
+      
       initialData: null,
       value: AuthService().user,
       child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Wrapper(),
       ),
     );
-    /*
-    return MaterialApp(
-      title: 'Recycle',
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
-      ),
-      home: Wrapper(),
-      debugShowCheckedModeBanner: false,
-    );*/
   }
 }
