@@ -5,7 +5,7 @@
 This is a recycling app that helps users quickly understand how to properly identify various types of recyclable materials.
 
 ## Table of Contents
-
+- [SDGs](#sdgs)
 - [Features](#features)
 - [Tech Used](#tech-used)
 - [Getting Started](#getting-started)
