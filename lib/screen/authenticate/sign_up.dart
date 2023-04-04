@@ -67,7 +67,7 @@ final AuthService _auth = AuthService();
                               colors: [Color(0xFF4A38F2), Color(0xFF3CDAC7)],
                               gradientDirection: GradientDirection.ltr,
                               gradientType: GradientType.linear,
-                            )
+                            ).animate().fade(duration: Duration(milliseconds: 500)).slideX(duration: Duration(milliseconds: 500))
                           ),
                         ),
                       ),
