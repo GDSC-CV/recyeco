@@ -21,9 +21,13 @@ This app includes the following features:
 - **Friend Leaderboard:** Users can compete for the top spot on the leaderboard.
 - **Notifications:** Users receive reminders to log in and recycle daily.
 
-## Technologies Used
+## Tech Used
 
-This app was built using the following technologies:
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=white"/>
+<img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=Flutter&logoColor=white"/>
+<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=Opencv&logoColor=white"/>
+<img src="https://img.shields.io/badge/Kaggle-20BEFF?style=flat-square&logo=Kaggle&logoColor=white"/>
+<img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=Kaggle&logoColor=white"/>
 
 - **Firebase:** Firebase Authentication and Cloud Firestore were used to handle user authentication and data storage.
 - **Flutter:** Flutter was used to build the mobile app interface.
