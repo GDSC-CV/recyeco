@@ -1,3 +1,4 @@
+# Recyeco
 <p align = "center">
   <img src="https://user-images.githubusercontent.com/119331529/229814912-35bd887e-2ef1-4477-9dca-f4e8b5e13375.png"/>
 </p>
@@ -15,8 +16,14 @@ This app includes the following features:
 
 - **Password Reset:** Users can reset their password via email if they forget it.
 - **Recyclings Scanning:** Users can use their device's camera to take a photo of a recyclable material, and the app will use OpenCV image processing and deep learning database to classify the recyclings.
+
+![ezgif com-crop](https://user-images.githubusercontent.com/119331529/229819645-a9972156-12fa-4463-92b4-be500edef10f.gif)
+
 - **Related Articles:** Users can read articles related to recycling and sustainable living, to learn more about how to reduce their environmental impact.
 - **Friend Invitations:** Users can invite their friends to join the app and compete on a recycling leaderboard.
+
+![ezgif com-crop (1)](https://user-images.githubusercontent.com/119331529/229820590-efe63904-adc9-449c-9ecc-dc063a183820.gif)
+
 - **Friend Leaderboard:** Users can compete for the top spot on the leaderboard.
 - **Notifications:** Users receive reminders to log in and recycle daily.
 
