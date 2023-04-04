@@ -1,4 +1,3 @@
-# Recyeco
 <p align = "center">
   <img src="https://user-images.githubusercontent.com/119331529/229814912-35bd887e-2ef1-4477-9dca-f4e8b5e13375.png"/>
 </p>
