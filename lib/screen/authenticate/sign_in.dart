@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:recycle_app/screen/authenticate/forget_password.dart';
-import 'package:recycle_app/screen/loading.dart';
-import 'package:recycle_app/tools/constants.dart';
-import 'package:recycle_app/service/auth.dart';
+import 'package:recyeco/screen/authenticate/forget_password.dart';
+import 'package:recyeco/screen/loading.dart';
+import 'package:recyeco/tools/constants.dart';
+import 'package:recyeco/service/auth.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -79,8 +79,14 @@ class _SignInState extends State<SignIn> {
                                         gradientDirection:
                                             GradientDirection.ltr,
                                         gradientType: GradientType.linear,
-                                      ).animate().fade(duration: Duration(milliseconds: 500)).slideX(duration: Duration(milliseconds: 500))
-                                  ),
+                                      )
+                                          .animate()
+                                          .fade(
+                                              duration:
+                                                  Duration(milliseconds: 500))
+                                          .slideX(
+                                              duration:
+                                                  Duration(milliseconds: 500))),
                                 ),
                               ),
                             ],

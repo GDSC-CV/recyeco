@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:recycle_app/models/myuser.dart';
-import 'package:recycle_app/service/database.dart';
-import 'package:recycle_app/tools/constants.dart';
+import 'package:recyeco/models/myuser.dart';
+import 'package:recyeco/service/database.dart';
+import 'package:recyeco/tools/constants.dart';
 
 class ChangeName_page extends StatefulWidget {
   const ChangeName_page({super.key});
@@ -12,22 +12,19 @@ class ChangeName_page extends StatefulWidget {
 }
 
 class _ChangeName_pageState extends State<ChangeName_page> {
-
   final _formKey = GlobalKey<FormState>();
   String _currentName = "";
 
   @override
   Widget build(BuildContext context) {
-    
     //User user = Provider.of<User>(context);
     UserData userData = Provider.of<UserData>(context);
-    
+
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
-          onPressed: ()async{
-            
-            Navigator.pop(context,"");
+          onPressed: () async {
+            Navigator.pop(context, "");
           },
         ),
       ),
@@ -39,20 +36,17 @@ class _ChangeName_pageState extends State<ChangeName_page> {
           children: <Widget>[
             const Text(
               'Update your Info.',
-              
               style: TextStyle(
                 fontSize: 18.0,
-                
               ),
             ),
             const SizedBox(height: 20.0),
             const Text(
               'Name',
-              
             ),
             const SizedBox(height: 20.0),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               child: TextFormField(
                 initialValue: userData.name,
                 decoration: inputTextDecoration,
@@ -62,39 +56,34 @@ class _ChangeName_pageState extends State<ChangeName_page> {
             ),
             const SizedBox(height: 10.0),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue,
-                foregroundColor: Colors.grey[50],
-              ),
-              child: const Text(
-                'confirm'
-              ),
-              onPressed: () async {
-                if(_formKey.currentState!.validate()){
-                  if(_currentName.isNotEmpty){
-                    await DatabaseService(uid: userData.uid).updateUserDataInfo(
-                      _currentName,
-                      userData.level,
-                      userData.experiences,
-                    );
-                    
-                    Navigator.pop(context,_currentName);
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.grey[50],
+                ),
+                child: const Text('confirm'),
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    if (_currentName.isNotEmpty) {
+                      await DatabaseService(uid: userData.uid)
+                          .updateUserDataInfo(
+                        _currentName,
+                        userData.level,
+                        userData.experiences,
+                      );
+
+                      Navigator.pop(context, _currentName);
+                    }
                   }
-                  
-                }
-              }
-            ),
+                }),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 foregroundColor: Colors.grey[50],
               ),
-              onPressed: (){
-                Navigator.pop(context,"");
+              onPressed: () {
+                Navigator.pop(context, "");
               },
-              child: const Text(
-                'cancel'
-              ),
+              child: const Text('cancel'),
             )
           ],
         ),

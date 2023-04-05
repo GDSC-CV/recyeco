@@ -4,11 +4,11 @@ import 'package:provider/provider.dart';
 
 import 'package:image/image.dart' as img;
 import 'package:flutter/material.dart';
-import 'package:recycle_app/models/myuser.dart';
-import 'package:recycle_app/screen/camera/display_picture_screen.dart';
-import 'package:recycle_app/service/classifier.dart';
+import 'package:recyeco/models/myuser.dart';
+import 'package:recyeco/screen/camera/display_picture_screen.dart';
+import 'package:recyeco/service/classifier.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:recycle_app/tools/experience_system.dart';
+import 'package:recyeco/tools/experience_system.dart';
 
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({

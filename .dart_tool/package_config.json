@@ -14,6 +14,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "args",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "async",
       "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0",
       "packageUri": "lib/",
@@ -58,6 +64,18 @@
     {
       "name": "characters",
       "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "checked_yaml",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/checked_yaml-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "cli_util",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cli_util-0.3.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -212,6 +230,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.11.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1",
       "packageUri": "lib/",
@@ -348,6 +372,12 @@
       "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4",
       "packageUri": "lib/",
       "languageVersion": "2.16"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/json_annotation-4.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
     },
     {
       "name": "lints",
@@ -531,7 +561,7 @@
     },
     {
       "name": "tflite_flutter",
-      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/tflite_flutter-0.9.0",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/tflite_flutter-0.9.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -602,13 +632,19 @@
       "languageVersion": "2.17"
     },
     {
-      "name": "recycle_app",
+      "name": "yaml",
+      "rootUri": "file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "recyeco",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2023-04-04T02:24:05.060268Z",
+  "generated": "2023-04-05T02:40:04.943791Z",
   "generator": "pub",
   "generatorVersion": "2.18.6"
 }

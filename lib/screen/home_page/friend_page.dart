@@ -4,12 +4,12 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:recycle_app/models/myuser.dart';
-import 'package:recycle_app/screen/home_page/friend_add_page.dart';
-import 'package:recycle_app/screen/home_page/setting_page.dart';
-import 'package:recycle_app/tools/friend_system.dart';
+import 'package:recyeco/models/myuser.dart';
+import 'package:recyeco/screen/home_page/friend_add_page.dart';
+import 'package:recyeco/screen/home_page/setting_page.dart';
+import 'package:recyeco/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'package:recycle_app/screen/home_page/articles_links.dart';
+import 'package:recyeco/screen/home_page/articles_links.dart';
 import 'package:flutter/animation.dart';
 
 class FriendWidget extends StatefulWidget {
@@ -77,16 +77,16 @@ class _FriendWidgetState extends State<FriendWidget> {
                                   gradientType: GradientType.linear,
                                 ),
                               ).animate(
-                                  effects: [
-                                    MoveEffect(
-                                      curve: Curves.easeInOut,
-                                      delay: 0.ms,
-                                      duration: 600.ms,
-                                      begin: Offset(-100, 0),
-                                      end: Offset(0, 0),
-                                    ),
-                                  ],
-                                ),
+                                effects: [
+                                  MoveEffect(
+                                    curve: Curves.easeInOut,
+                                    delay: 0.ms,
+                                    duration: 600.ms,
+                                    begin: Offset(-100, 0),
+                                    end: Offset(0, 0),
+                                  ),
+                                ],
+                              ),
                             ),
                             Divider(
                               thickness: 2,
@@ -119,7 +119,6 @@ class _FriendWidgetState extends State<FriendWidget> {
                             ),
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          
                           alignment: AlignmentDirectional(0, 0),
                           child: InkWell(
                             onTap: () async {
@@ -133,7 +132,7 @@ class _FriendWidgetState extends State<FriendWidget> {
                                   ),
                                 ),
                               );
-                      
+
                               if (message == true) {
                                 setState(() {
                                   //await FriendSystem.updateFriend(userData);
@@ -151,14 +150,14 @@ class _FriendWidgetState extends State<FriendWidget> {
                               ),
                             ).animate(
                               effects: [
-                                    MoveEffect(
-                                      curve: Curves.easeInOut,
-                                      delay: 0.ms,
-                                      duration: 600.ms,
-                                      begin: Offset(-100, 0),
-                                      end: Offset(0, 0),
-                                    ),
-                                  ],
+                                MoveEffect(
+                                  curve: Curves.easeInOut,
+                                  delay: 0.ms,
+                                  duration: 600.ms,
+                                  begin: Offset(-100, 0),
+                                  end: Offset(0, 0),
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -176,7 +175,6 @@ class _FriendWidgetState extends State<FriendWidget> {
                     fontStyle: FontStyle.normal,
                   ),
                 ),
-                
                 Container(
                   width: double.infinity,
                   height: 90,

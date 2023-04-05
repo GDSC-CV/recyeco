@@ -1,73 +1,81 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:recycle_app/models/myuser.dart';
+import 'package:recyeco/models/myuser.dart';
 
-class DatabaseService{
-
+class DatabaseService {
   final String? uid;
   DatabaseService({this.uid});
 
-  final CollectionReference userCollection = FirebaseFirestore.instance.collection('users');
-  Future initialUserData(String name,int level,int experiences,List friendIDs,List friendIDRequests,List friendsName,List friendsNameRequest,List friendsLevel, List friendsLevelRequest)async{
+  final CollectionReference userCollection =
+      FirebaseFirestore.instance.collection('users');
+  Future initialUserData(
+      String name,
+      int level,
+      int experiences,
+      List friendIDs,
+      List friendIDRequests,
+      List friendsName,
+      List friendsNameRequest,
+      List friendsLevel,
+      List friendsLevelRequest) async {
     return await userCollection.doc(uid).set({
-        'name':name,
-        'level':level,
-        'experiences': experiences,
-        'friendIDs':friendIDs,
-        'friendIDRequests':friendIDRequests,
-        'friendNames':friendsName,
-        'friendNameRequests':friendsNameRequest,
-        'friendLevels':friendsLevel,
-        'friendLevelRequests':friendsLevelRequest
-      }
-    );
+      'name': name,
+      'level': level,
+      'experiences': experiences,
+      'friendIDs': friendIDs,
+      'friendIDRequests': friendIDRequests,
+      'friendNames': friendsName,
+      'friendNameRequests': friendsNameRequest,
+      'friendLevels': friendsLevel,
+      'friendLevelRequests': friendsLevelRequest
+    });
   }
-  Future updateUserDataInfo(String name,int level,int experiences) async{
+
+  Future updateUserDataInfo(String name, int level, int experiences) async {
     //print("test");
     return await userCollection.doc(uid).update({
-        'name':name,
-        'level':level,
-        'experiences': experiences,
-      }
-    );
+      'name': name,
+      'level': level,
+      'experiences': experiences,
+    });
   }
-  Future updateUserDataFriend(List friendIDs,List friendsName,List friendsLevel) async{
+
+  Future updateUserDataFriend(
+      List friendIDs, List friendsName, List friendsLevel) async {
     //print("test");
     return await userCollection.doc(uid).update({
-        'friendIDs':friendIDs,
-        'friendNames':friendsName,
-        'friendLevels':friendsLevel,
-        
-      }
-    );
+      'friendIDs': friendIDs,
+      'friendNames': friendsName,
+      'friendLevels': friendsLevel,
+    });
   }
-  Future updateUserDataFriendRequest(List friendIDRequests,List friendsNameRequest, List friendsLevelRequest) async{
+
+  Future updateUserDataFriendRequest(List friendIDRequests,
+      List friendsNameRequest, List friendsLevelRequest) async {
     //print("test");
     return await userCollection.doc(uid).update({
-        'friendIDRequests':friendIDRequests,
-        'friendNameRequests':friendsNameRequest,
-        'friendLevelRequests':friendsLevelRequest
-      }
-    );
+      'friendIDRequests': friendIDRequests,
+      'friendNameRequests': friendsNameRequest,
+      'friendLevelRequests': friendsLevelRequest
+    });
   }
-  
-  UserData _userDataFromSnapshot(DocumentSnapshot snapshot){
+
+  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
     return UserData(
       uid: uid ?? "",
-      name: snapshot['name']?? "",
-      level: snapshot['level']?? "",
-      experiences: snapshot['experiences']?? "",
-      friendIDs: snapshot["friendIDs"]?? List.empty(),
-      friendIDRequests: snapshot["friendIDRequests"]?? List.empty(),
-      friendNames: snapshot["friendNames"]?? List.empty(),
-      friendNameRequests: snapshot["friendNameRequests"]?? List.empty(),
-      friendLevels: snapshot["friendLevels"]?? List.empty(),
-      friendLevelRequests: snapshot["friendLevelRequests"]?? List.empty(),
+      name: snapshot['name'] ?? "",
+      level: snapshot['level'] ?? "",
+      experiences: snapshot['experiences'] ?? "",
+      friendIDs: snapshot["friendIDs"] ?? List.empty(),
+      friendIDRequests: snapshot["friendIDRequests"] ?? List.empty(),
+      friendNames: snapshot["friendNames"] ?? List.empty(),
+      friendNameRequests: snapshot["friendNameRequests"] ?? List.empty(),
+      friendLevels: snapshot["friendLevels"] ?? List.empty(),
+      friendLevelRequests: snapshot["friendLevelRequests"] ?? List.empty(),
     );
   }
 
-  Stream<UserData> get userData{
-    return userCollection.doc(uid).snapshots()
-      .map(_userDataFromSnapshot);
+  Stream<UserData> get userData {
+    return userCollection.doc(uid).snapshots().map(_userDataFromSnapshot);
   }
   /*
   UserData? getSpecificUserData(String uid){

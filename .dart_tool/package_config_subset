@@ -1,4 +1,4 @@
-recycle_app
+recyeco
 2.18
 file:///C:/Users/User/Dev/gdsc/recyeco/
 file:///C:/Users/User/Dev/gdsc/recyeco/lib/
@@ -10,6 +10,10 @@ archive
 2.12
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/archive-3.3.6/
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/archive-3.3.6/lib/
+args
+2.18
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.4.0/
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.4.0/lib/
 async
 2.14
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.9.0/
@@ -42,6 +46,14 @@ characters
 2.12
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.1/lib/
+checked_yaml
+2.18
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/checked_yaml-2.0.2/
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/checked_yaml-2.0.2/lib/
+cli_util
+2.12
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cli_util-0.3.5/
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/cli_util-0.3.5/lib/
 clock
 2.12
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.1/
@@ -138,6 +150,10 @@ flutter_animate
 2.17
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_animate-4.1.1+1/
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_animate-4.1.1+1/lib/
+flutter_launcher_icons
+2.12
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.11.0/
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.11.0/lib/
 flutter_lints
 2.17
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/
@@ -222,6 +238,10 @@ js
 2.16
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/lib/
+json_annotation
+2.18
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/json_annotation-4.8.0/
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/json_annotation-4.8.0/lib/
 lints
 2.17
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1/
@@ -386,6 +406,10 @@ xml
 2.17
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/xml-6.1.0/
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/xml-6.1.0/lib/
+yaml
+2.12
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.1/
+file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.1/lib/
 sky_engine
 2.12
 file:///D:/ProgramFiles/Flutter/flutter_windows_3.3.10-stable/flutter/bin/cache/pkg/sky_engine/

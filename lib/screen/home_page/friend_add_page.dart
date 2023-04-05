@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -6,10 +5,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:recycle_app/models/myuser.dart';
-import 'package:recycle_app/tools/friend_system.dart';
+import 'package:recyeco/models/myuser.dart';
+import 'package:recyeco/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-
 
 class FriendAddWidget extends StatefulWidget {
   const FriendAddWidget({Key? key}) : super(key: key);
@@ -18,10 +16,10 @@ class FriendAddWidget extends StatefulWidget {
   _FriendAddWidgetState createState() => _FriendAddWidgetState();
 }
 
-class _FriendAddWidgetState extends State<FriendAddWidget>{
+class _FriendAddWidgetState extends State<FriendAddWidget> {
   final _formKey = GlobalKey<FormState>();
   String _friendId = "";
-  
+
   @override
   Widget build(BuildContext context) {
     UserData userData = Provider.of<UserData>(context);
@@ -93,31 +91,28 @@ class _FriendAddWidgetState extends State<FriendAddWidget>{
                           ),
                         ],
                       ),
-                      
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          
                           TextButton.icon(
-                            onPressed: (){
-                              Clipboard.setData(ClipboardData(text: userData.uid));
-                            },
-                            icon: const Icon(
-                              Icons.copy,
-                              color: Colors.black,
-                            ),
-                            label: Text(
-                              userData.uid,
-                              style: GoogleFonts.getFont(
-                                'Playfair Display',
+                              onPressed: () {
+                                Clipboard.setData(
+                                    ClipboardData(text: userData.uid));
+                              },
+                              icon: const Icon(
+                                Icons.copy,
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15,
                               ),
-                            )
-                          )
-                          
+                              label: Text(
+                                userData.uid,
+                                style: GoogleFonts.getFont(
+                                  'Playfair Display',
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                ),
+                              ))
                         ],
                       ),
                       Row(
@@ -147,7 +142,8 @@ class _FriendAddWidgetState extends State<FriendAddWidget>{
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(40, 0, 40, 0),
                         child: TextFormField(
-                          validator: (val) => val!.isEmpty ? 'Please enter a id' : null,
+                          validator: (val) =>
+                              val!.isEmpty ? 'Please enter a id' : null,
                           onChanged: (val) => setState(() => _friendId = val),
                           autofocus: true,
                           obscureText: false,
@@ -208,23 +204,24 @@ class _FriendAddWidgetState extends State<FriendAddWidget>{
                         padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                         child: InkWell(
                           onTap: () async {
-                            if(userData.friendIDs.contains(_friendId)){
+                            if (userData.friendIDs.contains(_friendId)) {
                               showDialog(
-                                context: context,
-                                builder: (context){
-                                  return AlertDialog(
-                                    content: Text("ID Error or You already are friends!"),
-                                  );
-                              });
-                            }else{
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      content: Text(
+                                          "ID Error or You already are friends!"),
+                                    );
+                                  });
+                            } else {
                               await FriendSystem.addFriend(userData, _friendId);
                               showDialog(
-                                context: context,
-                                builder: (context){
-                                  return AlertDialog(
-                                    content: Text("Success!"),
-                                  );
-                              });
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      content: Text("Success!"),
+                                    );
+                                  });
                             }
                           },
                           child: Container(
@@ -232,10 +229,7 @@ class _FriendAddWidgetState extends State<FriendAddWidget>{
                             height: 62.3,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
-                                colors: [
-                                  Color(0xFF6420AB),
-                                  Color(0xFF3CDAC7)
-                                ],
+                                colors: [Color(0xFF6420AB), Color(0xFF3CDAC7)],
                                 stops: [0, 1],
                                 begin: AlignmentDirectional(-1, -1),
                                 end: AlignmentDirectional(1, 1),
@@ -270,7 +264,7 @@ class _FriendAddWidgetState extends State<FriendAddWidget>{
                     ),
                     onPressed: () async {
                       await FriendSystem.updateFriend(userData);
-                      Navigator.pop(context,true);
+                      Navigator.pop(context, true);
                     },
                   ),
                 ],

@@ -1,5 +1,5 @@
-name: recycle_app
-description: A new Flutter project.
+name: recyeco
+description: A recycle app.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -58,6 +58,7 @@ dependencies:
   flutter_animate: ^4.1.1+1
   simple_gradient_text: ^1.2.4
   flutter_slidable: ^2.0.0
+  flutter_launcher_icons: ^0.11.0
   #flutter_webview_plugin: ^0.4.0
 
 
@@ -116,3 +117,19 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/images/recycle.png"
+  web:
+    generate: true
+    image_path: "assets/images/recycle.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/images/recycle.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/recycle.png"

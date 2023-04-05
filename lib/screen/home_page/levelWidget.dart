@@ -5,10 +5,9 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'package:recycle_app/models/myuser.dart';
-import 'package:recycle_app/tools/experience_system.dart';
+import 'package:recyeco/models/myuser.dart';
+import 'package:recyeco/tools/experience_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-
 
 class LevelWidget extends StatefulWidget {
   const LevelWidget({Key? key}) : super(key: key);
@@ -17,19 +16,15 @@ class LevelWidget extends StatefulWidget {
   _LevelWidgetState createState() => _LevelWidgetState();
 }
 
-class _LevelWidgetState extends State<LevelWidget>{
-
-  
-
+class _LevelWidgetState extends State<LevelWidget> {
   @override
   Widget build(BuildContext context) {
-    UserData userData = Provider.of<UserData>(context,listen: true);
-    final userRemainexp = Experience.calculate_LastExperience(userData.experiences);
-    final expPersent = userRemainexp/10;
-    
-    
+    UserData userData = Provider.of<UserData>(context, listen: true);
+    final userRemainexp =
+        Experience.calculate_LastExperience(userData.experiences);
+    final expPersent = userRemainexp / 10;
+
     return Scaffold(
-      
       backgroundColor: Colors.white,
       body: SafeArea(
         child: GestureDetector(
@@ -57,9 +52,7 @@ class _LevelWidgetState extends State<LevelWidget>{
                               child: Container(
                                 width: 328.1,
                                 height: 100,
-                                decoration: BoxDecoration(
-                                  color: Colors.white
-                                ),
+                                decoration: BoxDecoration(color: Colors.white),
                                 alignment: AlignmentDirectional(0, -1),
                                 child: GradientText(
                                   'Level',
@@ -76,17 +69,15 @@ class _LevelWidgetState extends State<LevelWidget>{
                                   ],
                                   gradientDirection: GradientDirection.ltr,
                                   gradientType: GradientType.linear,
-                                ).animate(
-                                  effects: [
-                                    MoveEffect(
-                                      curve: Curves.easeInOut,
-                                      delay: 0.ms,
-                                      duration: 600.ms,
-                                      begin: Offset(-100, 0),
-                                      end: Offset(0, 0),
-                                    ),
-                                  ]
-                                ),
+                                ).animate(effects: [
+                                  MoveEffect(
+                                    curve: Curves.easeInOut,
+                                    delay: 0.ms,
+                                    duration: 600.ms,
+                                    begin: Offset(-100, 0),
+                                    end: Offset(0, 0),
+                                  ),
+                                ]),
                               ),
                             ),
                             Divider(
@@ -157,10 +148,7 @@ class _LevelWidgetState extends State<LevelWidget>{
                         height: 62.3,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
-                            colors: [
-                              Color(0xFF4A38F2),
-                              Color(0xFF3CDAC7)
-                            ],
+                            colors: [Color(0xFF4A38F2), Color(0xFF3CDAC7)],
                             stops: [0, 1],
                             begin: AlignmentDirectional(0, -1),
                             end: AlignmentDirectional(0, 1),
@@ -177,17 +165,15 @@ class _LevelWidgetState extends State<LevelWidget>{
                     ),
                   ),
                 ],
-              ).animate(
-                effects: [
-                  MoveEffect(
-                    curve: Curves.easeInOut,
-                    delay: 0.ms,
-                    duration: 600.ms,
-                    begin: Offset(100, 0),
-                    end: Offset(0, 0),
-                  ),
-                ]
-              ),
+              ).animate(effects: [
+                MoveEffect(
+                  curve: Curves.easeInOut,
+                  delay: 0.ms,
+                  duration: 600.ms,
+                  begin: Offset(100, 0),
+                  end: Offset(0, 0),
+                ),
+              ]),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -209,17 +195,15 @@ class _LevelWidgetState extends State<LevelWidget>{
                 ],
               ),
             ],
-          ).animate(
-            effects: [
-              FadeEffect(
-                curve: Curves.easeInOut,
-                delay: 0.ms,
-                duration: 600.ms,
-                begin: 0,
-                end: 1,
-              ),
-            ]
-          ),
+          ).animate(effects: [
+            FadeEffect(
+              curve: Curves.easeInOut,
+              delay: 0.ms,
+              duration: 600.ms,
+              begin: 0,
+              end: 1,
+            ),
+          ]),
         ),
       ),
     );
