@@ -8,6 +8,7 @@ This is a recycling app that helps users quickly understand how to properly iden
 - [Features](#features)
 - [Tech Used](#tech-used)
 - [Getting Started](#getting-started)
+- [Download](#download)
 
 ## SDGs
 <p align = "left">
@@ -61,3 +62,6 @@ To get started with **Recyeco**, follow these steps:
 4. When you successfully recycle your material, you'll earn points towards your account.
 5. You also can read articles on our app to earn points!
 6. Keep earning points to compete with your friends and climb up the leaderboard!
+
+## Download
+https://drive.google.com/drive/folders/1MRfrN-oj_jQnd3YpLx7QWprbQ06q5hfq
