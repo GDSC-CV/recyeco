@@ -347,7 +347,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                const ForgetPassword()));
+                                                const PasswordWidget()));
                                   } else {
                                     showDialog(
                                         context: context,
