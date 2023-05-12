@@ -1,6 +1,7 @@
-def keystorePropertiesFile = rootProject.file("key.properties")
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+// uncomment this line to release
+// def keystorePropertiesFile = rootProject.file("key.properties")
+// def keystoreProperties = new Properties()
+// keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
@@ -58,17 +59,20 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
-   signingConfigs {
-       release {
-           keyAlias keystoreProperties['keyAlias']
-           keyPassword keystoreProperties['keyPassword']
-           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-           storePassword keystoreProperties['storePassword']
-       }
-   }
+// uncomment this line to release
+//    signingConfigs {
+//        release {
+//            keyAlias keystoreProperties['keyAlias']
+//            keyPassword keystoreProperties['keyPassword']
+//            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+//            storePassword keystoreProperties['storePassword']
+//        }
+//    }
    buildTypes {
        release {
-           signingConfig signingConfigs.release
+        // uncomment this line to release
+        //    signingConfig signingConfigs.release
+           signingConfig signingConfigs.debug
        }
    }
 }
