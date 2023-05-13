@@ -11,6 +11,8 @@ import 'package:recyeco/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:recyeco/screen/home_page/articles_links.dart';
 import 'package:flutter/animation.dart';
+import 'package:tuple/tuple.dart';
+
 
 class FriendWidget extends StatefulWidget {
   const FriendWidget({Key? key}) : super(key: key);
@@ -22,10 +24,38 @@ class FriendWidget extends StatefulWidget {
 class _FriendWidgetState extends State<FriendWidget> {
   @override
   Widget build(BuildContext context) {
+
     UserData userData = Provider.of<UserData>(context);
+    var currentUserLevel = userData.level;
+    
+    //var currentUserFriendRequestNameList = userData.friendNameRequests;
+    //var currentUserFriendRequestLevelList = userData.friendLevelRequests;
     var currentUserFriendIDList = userData.friendIDs;
     var currentUserFriendNameList = userData.friendNames;
     var currentUserFriendLevelList = userData.friendLevels;
+    
+    // create a list of tuples with friend's name and level
+    List<Tuple2<String, int>> friendsLevelList = [];
+    for (int i = 0; i < currentUserFriendNameList.length; i++) {
+      friendsLevelList.add(Tuple2(currentUserFriendNameList[i], currentUserFriendLevelList[i]));
+    }
+    friendsLevelList.add(Tuple2("You", userData.level));
+    
+    // sort the list based on level
+    friendsLevelList.sort((a, b) => b.item2.compareTo(a.item2));
+    
+    // extract top three ranking friends
+    List<Tuple2<String, int>> topThreeFriends = [];
+    if (friendsLevelList.length >= 1) {
+      topThreeFriends.add(friendsLevelList[0]);
+    }
+    if (friendsLevelList.length >= 2) {
+      topThreeFriends.add(friendsLevelList[1]);
+    }
+    if (friendsLevelList.length >= 3) {
+      topThreeFriends.add(friendsLevelList[2]);
+    }
+
 
     var currentUserFriendRequestIDList = userData.friendIDRequests;
     var currentUserFriendRequestNameList = userData.friendNameRequests;
@@ -435,7 +465,227 @@ class _FriendWidgetState extends State<FriendWidget> {
                     ),
                   ],
                 ),
-                Expanded(
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 250,
+                        decoration: BoxDecoration(
+                          color: Color(0x00FFFFFF),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(90, 10, 90, 40),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    topThreeFriends[1].item1+":",
+                                    style: GoogleFonts.getFont(
+                                      'Playfair Display',
+                                      color: Color(0xFF090347),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15,
+                                      fontStyle: FontStyle.normal,
+                                    ),
+                                  ).animate(effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeIn,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(0, -40),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]),
+                                  Text(
+                                    "Level ${topThreeFriends[1].item2}\n",
+                                    style: TextStyle(
+                                      fontSize: 12.0,
+                                        color: Colors.black,
+                                      ),
+                                  ).animate(effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeIn,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(0, -40),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]),
+                                  Container(
+                                    width: 60,
+                                    height: 90,
+                                    decoration: const BoxDecoration(
+                                      color: Color.fromARGB(255, 67, 192, 177),
+                                    ),
+                                    child: const Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          22.5, 50, 0, 0),
+                                      child: Text(
+                                        '2',
+                                        style: TextStyle(
+                                          fontSize:30.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ).animate(effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeIn,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(0, 40),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    topThreeFriends[0].item1+":",
+                                    style: GoogleFonts.getFont(
+                                      'Playfair Display',
+                                      color: Color(0xFF090347),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15,
+                                      fontStyle: FontStyle.normal,
+                                    ),
+                                  ).animate(effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeIn,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(0, -40),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]),
+                                  Text(
+                                    "Level ${topThreeFriends[0].item2}\n",
+                                    style: TextStyle(
+                                      fontSize: 12.0,
+                                        color: Colors.black,
+                                      ),
+                                  ).animate(effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeIn,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(0, -40),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]),
+                                  Container(
+                                    width: 60,
+                                    height: 120,
+                                    decoration: const BoxDecoration(
+                                      color: Color(0xFF3CDAC7),
+                                    ),
+                                    child: const Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          22.5, 80, 0, 0),
+                                      child: Text(
+                                        '1',
+                                        style: TextStyle(
+                                          fontSize: 30.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ).animate(effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeIn,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(0, 40),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    topThreeFriends[2].item1+":",
+                                    style: GoogleFonts.getFont(
+                                      'Playfair Display',
+                                      color: Color(0xFF090347),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 15,
+                                      fontStyle: FontStyle.normal,
+                                    ),
+                                  ).animate(effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeIn,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(0, -40),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]),
+                                  Text(
+                                    "Level ${topThreeFriends[2].item2}\n",
+                                    style: TextStyle(
+                                      fontSize: 12.0,
+                                        color: Colors.black,
+                                      ),
+                                  ).animate(effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeIn,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(0, -40),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]),
+                                  Container(
+                                    width: 60,
+                                    height: 60,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 82, 172, 162),
+                                    ),
+                                    child: const Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          22.5, 20, 0, 0),
+                                      child: Text(
+                                        '3',
+                                        style: TextStyle(
+                                          fontSize: 30.0,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ).animate(effects: [
+                                    MoveEffect(
+                                      curve: Curves.easeIn,
+                                      delay: 0.ms,
+                                      duration: 600.ms,
+                                      begin: Offset(0, 40),
+                                      end: Offset(0, 0),
+                                    ),
+                                  ]),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                /*Expanded(
                   child: ListView.builder(
                       padding: EdgeInsets.zero,
                       itemCount: currentUserFriendRequestIDList.length,
@@ -587,7 +837,7 @@ class _FriendWidgetState extends State<FriendWidget> {
                       ),
                     ],
                   ),
-                ),
+                ),*/
                 Divider(
                   thickness: 2,
                   indent: 60,
