@@ -488,7 +488,7 @@ class _FriendWidgetState extends State<FriendWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    topThreeFriends[1].item1+":",
+                                    topThreeFriends.length < 2 ? "       " : "${topThreeFriends[1].item1}:",
                                     style: GoogleFonts.getFont(
                                       'Playfair Display',
                                       color: Color(0xFF090347),
@@ -506,7 +506,7 @@ class _FriendWidgetState extends State<FriendWidget> {
                                     ),
                                   ]),
                                   Text(
-                                    "Level ${topThreeFriends[1].item2}\n",
+                                     topThreeFriends.length < 2 ? "       " :"Level ${topThreeFriends[1].item2}\n",
                                     style: TextStyle(
                                       fontSize: 12.0,
                                         color: Colors.black,
@@ -618,7 +618,7 @@ class _FriendWidgetState extends State<FriendWidget> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Text(
-                                    topThreeFriends[2].item1+":",
+                                     topThreeFriends.length < 3 ? "       " :topThreeFriends[2].item1+":",
                                     style: GoogleFonts.getFont(
                                       'Playfair Display',
                                       color: Color(0xFF090347),
@@ -636,7 +636,7 @@ class _FriendWidgetState extends State<FriendWidget> {
                                     ),
                                   ]),
                                   Text(
-                                    "Level ${topThreeFriends[2].item2}\n",
+                                     topThreeFriends.length < 3 ? "       " :"Level ${topThreeFriends[2].item2}\n",
                                     style: TextStyle(
                                       fontSize: 12.0,
                                         color: Colors.black,
