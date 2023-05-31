@@ -10,6 +10,8 @@ import 'package:recyeco/screen/authenticate/forget_password.dart';
 import 'package:recyeco/screen/home_page/change_name.dart';
 import 'package:recyeco/screen/home_page/friend_page.dart';
 import 'package:recyeco/screen/home_page/levelWidget.dart';
+import 'package:recyeco/screen/home_page/Ranking.dart';
+
 import 'package:recyeco/service/auth.dart';
 import 'package:recyeco/tools/friend_system.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -273,6 +275,92 @@ class _SettingWidgetState extends State<SettingWidget> {
                                     );
                                     print("press Level");
                                   }),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                      child: Container(
+                        width: 100,
+                        height: 67.8,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Color(0xFF3CDAC7), Color(0xFF4A38F2)],
+                            stops: [0, 1],
+                            begin: AlignmentDirectional(1, 0),
+                            end: AlignmentDirectional(-1, 0),
+                          ),
+                          borderRadius: BorderRadius.circular(60),
+                          shape: BoxShape.rectangle,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
+                              child: Icon(
+                                Icons.bar_chart,
+                                color: Colors.white,
+                                size: 46,
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Ranking",
+                                    textAlign: TextAlign.start,
+                                    style: GoogleFonts.getFont(
+                                      'Playfair Display',
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 22,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 10),
+                              child: IconButton(
+                                // borderColor: Color(0x00FFFFFF),
+                                // borderRadius: 30,
+                                // borderWidth: 1,
+                                // buttonSize: 55,
+                                // fillColor: Colors.white,
+                                icon: Icon(
+                                  Icons.double_arrow_rounded,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  size: 40,
+                                ),
+                                onPressed: () async  {
+                                  await FriendSystem.updateFriend(userData);
+                                  bool message = await Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) => Provider(
+                                        create: (context) => userData,
+                                        builder: (context, child) =>
+                                            const RankingWidget(),
+                                      ),
+                                    ),
+                                  );
+
+                                  if (message == true) {
+                                    setState(() {
+                                      //await FriendSystem.updateFriend(userData);
+                                    });
+                                  }
+                                },
+                              ),
                             ),
                           ],
                         ),
